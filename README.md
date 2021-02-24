@@ -75,7 +75,7 @@ LICENCE: [Next.js LICENCE](https://github.com/vercel/next.js/blob/canary/license
 
 ## Licence 🗒
 
-MIT
+[MIT](https://github.com/shinshin86/habanero-bee/blob/main/LICENSE)
 
 ## Author 🖌
 
