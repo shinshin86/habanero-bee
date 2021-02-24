@@ -15,7 +15,8 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext js,ts,tsx --fix",
     "allcheck": "yarn format && yarn type-check && yarn lint .",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "very-simple-sitemap-generator": "^0.1.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/markdown-it": "^12.0.1",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
@@ -63,8 +65,10 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.1.1",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
+    "ts-jest": "^26.5.2",
     "typescript": "^4.1.5"
   }
 }
