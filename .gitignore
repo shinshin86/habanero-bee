@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+out/
+.next/
+public/*.png
+public/*.jpg
+public/*.jpeg
+public/browserconfig.xml
+public/favicon.ico
+public/site.webmanifest
+public/sitemap.xml
