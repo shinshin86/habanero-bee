@@ -31,5 +31,9 @@ export const renderHTML = (markdownText: string): string => {
 
 export const getTextContent = (markdownText: string): string => {
   const regex = /(<([^>]+)>)/gi;
-  return renderHTML(markdownText).replace(regex, '');
+  return renderHTML(markdownText).replace(/<br>/g, '\n').replace(regex, '');
+};
+
+export const getMetaDescriptionText = (markdownText: string): string => {
+  return getTextContent(markdownText).replace(/\n/g, '');
 };
