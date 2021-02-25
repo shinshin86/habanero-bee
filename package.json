@@ -14,7 +14,7 @@
     "favicon": "node scripts/gen-favicon.js public/ogp.png",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext js,ts,tsx --fix",
-    "allcheck": "yarn format && yarn type-check && yarn lint .",
+    "allcheck": "yarn format && yarn type-check && yarn lint . && yarn test",
     "postinstall": "husky install",
     "test": "jest"
   },
