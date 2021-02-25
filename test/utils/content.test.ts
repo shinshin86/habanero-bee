@@ -20,9 +20,7 @@ describe('getDescriptionText', (): void => {
 describe('renderHTML', (): void => {
   test('Should return converted HTML from markdown.', (): void => {
     const mdText = '### test';
-    // The end of the line is a new line.
-    const expectedHTML = `<h3>test</h3>
-`;
+    const expectedHTML = `<h3>test</h3>`;
     expect(renderHTML(mdText)).toBe(expectedHTML);
   });
 });
@@ -30,9 +28,7 @@ describe('renderHTML', (): void => {
 describe('getTextContent', (): void => {
   test('Should return plain text from markdown.', (): void => {
     const mdText = '### test';
-    // The end of the line is a new line.
-    const expectedText = `test
-`;
+    const expectedText = `test`;
     expect(getTextContent(mdText)).toBe(expectedText);
   });
 });
