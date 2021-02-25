@@ -8,7 +8,7 @@ import TagLinks from '../components/TagLinks';
 import { isValidData } from '../utils/validate';
 import { getTagList } from '../utils/tags';
 import { getLinks, chackHasOtherLinks } from '../utils/link';
-import { renderHTML } from '../utils/content';
+import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -44,7 +44,7 @@ const DetailPage: React.FC<{
       <Header
         siteUrl={`${meta.siteUrl}/${contentData.slug}`}
         title={`${title} | ${meta.title}`}
-        description={description || text}
+        description={description || getMetaDescriptionText(text)}
         ogpImage={imagePath || meta.ogpImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
       />
