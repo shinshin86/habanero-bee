@@ -2,6 +2,8 @@
 
 habanero-bee is a simple [AMP-compliant](https://amp.dev/) CMS system that makes it easy to create content using [Google Sheets](https://www.google.com/sheets/about/).
 
+[![Build Status](https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main)](https://travis-ci.org/shinshin86/habanero-bee)
+
 ## WIP📌
 
 This project is work in progress to version to 0.1.0.
