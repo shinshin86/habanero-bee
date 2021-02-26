@@ -52,6 +52,6 @@ export const getLinks = (generalData: General): Links => {
   return links;
 };
 
-export const chackHasOtherLinks = (links: Links): boolean => {
+export const checkHasOtherLinks = (links: Links): boolean => {
   return !!Object.keys(links).length;
 };

@@ -1,4 +1,4 @@
-import { Links, getLinks, chackHasOtherLinks } from '@/utils/link';
+import { Links, getLinks, checkHasOtherLinks } from '@/utils/link';
 import { General } from '@/utils/sheet-data';
 
 describe('getLinks', (): void => {
@@ -39,14 +39,14 @@ describe('getLinks', (): void => {
   });
 });
 
-describe('chackHasOtherLinks', (): void => {
+describe('checkHasOtherLinks', (): void => {
   test('Should return a true, if have a links.', (): void => {
     const links: Links = { website: 'websiteLinkUrl' };
-    expect(chackHasOtherLinks(links)).toBeTruthy();
+    expect(checkHasOtherLinks(links)).toBeTruthy();
   });
 
   test("Should return a false, if haven't a links.", (): void => {
     const links: Links = {};
-    expect(chackHasOtherLinks(links)).toBeFalsy();
+    expect(checkHasOtherLinks(links)).toBeFalsy();
   });
 });

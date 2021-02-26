@@ -7,7 +7,7 @@ import OtherLinks from '../components/OtherLinks';
 import TagLinks from '../components/TagLinks';
 import { isValidData } from '../utils/validate';
 import { getTagList } from '../utils/tags';
-import { getLinks, chackHasOtherLinks } from '../utils/link';
+import { getLinks, checkHasOtherLinks } from '../utils/link';
 import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -24,7 +24,7 @@ const DetailPage: React.FC<{
   const { title: pageTitle } = general;
 
   const links = getLinks(general);
-  const hasOtherLinks = chackHasOtherLinks(links);
+  const hasOtherLinks = checkHasOtherLinks(links);
 
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 

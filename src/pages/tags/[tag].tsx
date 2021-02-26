@@ -8,7 +8,7 @@ import OtherLinks from '../../components/OtherLinks';
 import AvatarImage from '../../components/AvatarImage';
 import { getTagList } from '../../utils/tags';
 import { isValidData } from '../../utils/validate';
-import { getLinks, chackHasOtherLinks } from '../../utils/link';
+import { getLinks, checkHasOtherLinks } from '../../utils/link';
 import { General, Meta, Content } from '../../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -25,7 +25,7 @@ const TagPage: React.FC<{
   const { title, logoImage, logoImageAltText } = general;
 
   const links = getLinks(general);
-  const hasOtherLinks = chackHasOtherLinks(links);
+  const hasOtherLinks = checkHasOtherLinks(links);
 
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 

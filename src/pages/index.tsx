@@ -7,7 +7,7 @@ import PageTopButton from '../components/PageTopButton';
 import OtherLinks from '../components/OtherLinks';
 import AvatarImage from '../components/AvatarImage';
 import { isValidData } from '../utils/validate';
-import { getLinks, chackHasOtherLinks } from '../utils/link';
+import { getLinks, checkHasOtherLinks } from '../utils/link';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticProps } from 'next';
 
@@ -23,7 +23,7 @@ const IndexPage: React.FC<{
   const { title, description, logoImage, logoImageAltText } = general;
 
   const links = getLinks(general);
-  const hasOtherLinks = chackHasOtherLinks(links);
+  const hasOtherLinks = checkHasOtherLinks(links);
 
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
