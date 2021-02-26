@@ -8,7 +8,7 @@ This project is work in progress to version to 0.1.0.
 I will update the version to 0.1.0 as soon as this task is completed.
 
 - [ ] Create a logo for this project.
-- [ ] Create a unit test for a util functions.
+- [x] Create a unit test for a util functions.
 - [ ] Create a simple document on deploying a site using Habanero Bee.
 
 ## Setup Habanero Bee Site 🛠
