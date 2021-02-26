@@ -22,11 +22,11 @@ const isValidContentData = (contentList: Array<Content>): boolean => {
 export const isValidData = (
   general: General,
   meta: Meta,
-  content: Array<Content>
+  contentList: Array<Content>
 ): boolean => {
   return (
     isValidGeneralData(general) &&
     isValidMetaData(meta) &&
-    isValidContentData(content)
+    isValidContentData(contentList)
   );
 };

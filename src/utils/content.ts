@@ -10,7 +10,7 @@ export const getDescriptionText = (text: string): string => {
 };
 
 export const renderHTML = (markdownText: string): string => {
-  const renderedText = mi.render(markdownText);
+  const renderedText = mi.render(markdownText).replace(/\n/g, '');
   const regexH1 = /<h1>/;
   const regexH2 = /<h2>/;
 
@@ -29,7 +29,11 @@ export const renderHTML = (markdownText: string): string => {
   return renderedText;
 };
 
-export const getTextContent = (html: string): string => {
+export const getTextContent = (markdownText: string): string => {
   const regex = /(<([^>]+)>)/gi;
-  return renderHTML(html).replace(regex, '');
+  return renderHTML(markdownText).replace(/<br>/g, '\n').replace(regex, '');
+};
+
+export const getMetaDescriptionText = (markdownText: string): string => {
+  return getTextContent(markdownText).replace(/\n/g, '');
 };
