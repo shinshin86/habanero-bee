@@ -1,6 +1,6 @@
 ![Habanero Bee - Logo](https://user-images.githubusercontent.com/8216064/109447036-28951f80-7a86-11eb-80ec-e7e77939dd86.png)
 
-<h2 align="center">Habanero Bee 🐝</h2>
+<h2 align="center">🌶 Habanero Bee 🐝</h2>
 
 <p align="center">Habanero Bee is a simple <a href="https://amp.dev/" target="_blank" rel="noopener  noreferrer">AMP-compliant</a> CMS system that makes it easy to create content using <a href="https://www.google.com/sheets/about/" target="_blank" rel="noopener  noreferrer">Google Sheets</a>.</p>
 
