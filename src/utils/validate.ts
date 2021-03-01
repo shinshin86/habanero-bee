@@ -11,12 +11,25 @@ const isValidMetaData = (obj: Meta): boolean => {
 };
 
 const isValidContentData = (contentList: Array<Content>): boolean => {
+  const slugList: Array<string> = [];
   for (const content of contentList) {
     const { title, text, slug } = content;
     if (!title || !text || !slug) return false;
+
+    slugList.push(slug);
+  }
+
+  if (hasDuplicateSlug(slugList)) {
+    console.log('ERROR: slug is duplicated');
+    return false;
   }
 
   return true;
+};
+
+const hasDuplicateSlug = (slugList: Array<string>): boolean => {
+  const slugSet = new Set(slugList);
+  return slugSet.size !== slugList.length;
 };
 
 export const isValidData = (
