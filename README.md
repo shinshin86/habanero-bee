@@ -1,17 +1,29 @@
-# Habanero Bee 🐝
+![Habanero Bee - Logo](https://user-images.githubusercontent.com/8216064/109447036-28951f80-7a86-11eb-80ec-e7e77939dd86.png)
 
-habanero-bee is a simple [AMP-compliant](https://amp.dev/) CMS system that makes it easy to create content using [Google Sheets](https://www.google.com/sheets/about/).
+<h2 align="center">🌶 Habanero Bee 🐝</h2>
 
-[![Build Status](https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main)](https://travis-ci.org/shinshin86/habanero-bee)
+<h3 align="center">Your content to the world faster</h3>
+
+<p align="center">Habanero Bee is a simple <a href="https://amp.dev/" target="_blank" rel="noopener  noreferrer">AMP-compliant</a> CMS system that makes it easy to create content using <a href="https://www.google.com/sheets/about/" target="_blank" rel="noopener  noreferrer">Google Sheets</a>.</p>
+
+<p align="center">
+  <a href="https://github.com/shinshin86/habanero-bee/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Habanero Bee is released under the MIT license." />
+  </a>
+  <a href="https://travis-ci.org/shinshin86/habanero-bee">
+    <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
+  </a>
+</p>
 
 ## WIP📌
 
 This project is work in progress to version to 0.1.0.
 I will update the version to 0.1.0 as soon as this task is completed.
 
-- [ ] Create a logo for this project.
+- [x] Create a logo for this project.
 - [x] Create a unit test for a util functions.
 - [ ] Create a simple document on deploying a site using Habanero Bee.
+- [ ] And some minor fixes...
 
 ## Setup Habanero Bee Site 🛠
 
@@ -74,10 +86,6 @@ LICENCE: [HTML5 UP LICENCE](https://html5up.net/license)
 [Next.js - GitHub](https://github.com/vercel/next.js)
 
 LICENCE: [Next.js LICENCE](https://github.com/vercel/next.js/blob/canary/license.md)
-
-## Licence 🗒
-
-[MIT](https://github.com/shinshin86/habanero-bee/blob/main/LICENSE)
 
 ## Author 🖌
 
