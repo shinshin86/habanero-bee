@@ -2,6 +2,8 @@
 
 <h2 align="center">🌶 Habanero Bee 🐝</h2>
 
+<h3 align="center">Your content to the world faster</h3>
+
 <p align="center">Habanero Bee is a simple <a href="https://amp.dev/" target="_blank" rel="noopener  noreferrer">AMP-compliant</a> CMS system that makes it easy to create content using <a href="https://www.google.com/sheets/about/" target="_blank" rel="noopener  noreferrer">Google Sheets</a>.</p>
 
 <p align="center">
