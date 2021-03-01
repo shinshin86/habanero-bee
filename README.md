@@ -6,10 +6,10 @@
 
 <p align="center">
   <a href="https://github.com/shinshin86/habanero-bee/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Licence badge" />
+    <img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Habanero Bee is released under the MIT license." />
   </a>
   <a href="https://travis-ci.org/shinshin86/habanero-bee">
-    <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Travis CI badge" />
+    <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
   </a>
 </p>
 
