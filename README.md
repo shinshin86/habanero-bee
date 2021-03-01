@@ -1,8 +1,10 @@
-# Habanero Bee 🐝
+![Habanero Bee - Logo](https://user-images.githubusercontent.com/8216064/109447036-28951f80-7a86-11eb-80ec-e7e77939dd86.png)
 
-habanero-bee is a simple [AMP-compliant](https://amp.dev/) CMS system that makes it easy to create content using [Google Sheets](https://www.google.com/sheets/about/).
+<h2 align="center">Habanero Bee 🐝</h2>
 
-[![Build Status](https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main)](https://travis-ci.org/shinshin86/habanero-bee)
+<p align="center">Habanero Bee is a simple <a href="https://amp.dev/" target="_blank" rel="noopener  noreferrer">AMP-compliant</a> CMS system that makes it easy to create content using <a href="https://www.google.com/sheets/about/" target="_blank" rel="noopener  noreferrer">Google Sheets</a>.</p>
+
+<p align="center"><a href="https://github.com/shinshin86/habanero-bee/blob/main/LICENSE"><img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Licence badge" /></a><a href="https://travis-ci.org/shinshin86/habanero-bee"><img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Travis CI badge" /></a></p>
 
 ## WIP📌
 
@@ -74,10 +76,6 @@ LICENCE: [HTML5 UP LICENCE](https://html5up.net/license)
 [Next.js - GitHub](https://github.com/vercel/next.js)
 
 LICENCE: [Next.js LICENCE](https://github.com/vercel/next.js/blob/canary/license.md)
-
-## Licence 🗒
-
-[MIT](https://github.com/shinshin86/habanero-bee/blob/main/LICENSE)
 
 ## Author 🖌
 
