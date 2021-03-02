@@ -1,6 +1,9 @@
 /* @ts-ignore  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const Layout: React.FC<{ children: any }> = ({ children }): JSX.Element => {
+const Layout: React.FC<{ children: any; backgroundColorCode: string }> = ({
+  children,
+  backgroundColorCode,
+}): JSX.Element => {
   return (
     <>
       {children}
@@ -4777,7 +4780,7 @@ const Layout: React.FC<{ children: any }> = ({ children }): JSX.Element => {
 
         body {
           height: 100%;
-          background-color: #202338;
+          background-color: ${backgroundColorCode || '#202338'};
           background-repeat: repeat, no-repeat, no-repeat;
           background-size: 100px 100px, cover, cover;
           background-position: top left, center center, bottom center;
