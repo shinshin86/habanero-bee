@@ -3,14 +3,8 @@ export interface General {
   description: string;
   logoImage?: string;
   logoImageAltText?: string;
-  websiteLink?: string;
-  twitterLink?: string;
-  instagramLink?: string;
-  facebookLink?: string;
-  githubLink?: string;
-  tumblrLink?: string;
-  patreonLink?: string;
-  quoraLink?: string;
+  externalLinkUrl?: string;
+  externalLinkText?: string;
   backgroundColor?: string;
   pageTopButtonColor?: string;
 }
