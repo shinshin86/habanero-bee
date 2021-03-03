@@ -3,14 +3,13 @@ import Analytics from '../components/Analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageTopButton from '../components/PageTopButton';
-import OtherLinks from '../components/OtherLinks';
 import TagLinks from '../components/TagLinks';
 import { isValidData } from '../utils/validate';
 import { getTagList } from '../utils/tags';
-import { getLinks, checkHasOtherLinks } from '../utils/link';
 import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import ExternalLinks from '@/components/ExternalLinks';
 
 export const config = {
   amp: true,
@@ -23,9 +22,6 @@ const DetailPage: React.FC<{
 }> = ({ general, contentData, meta }): JSX.Element => {
   const { title: pageTitle } = general;
 
-  const links = getLinks(general);
-  const hasOtherLinks = checkHasOtherLinks(links);
-
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
   const {
@@ -36,7 +32,10 @@ const DetailPage: React.FC<{
     imageAltText,
     tags,
     renderedHTML,
+    externalLinkUrl,
+    externalLinkText,
   } = contentData;
+
   const tagList = getTagList(tags);
 
   return (
@@ -88,11 +87,8 @@ const DetailPage: React.FC<{
           </header>
 
           <hr />
-          {hasOtherLinks && (
-            <div>
-              <h3>LINKS</h3>
-              <OtherLinks links={links} />
-            </div>
+          {externalLinkUrl && (
+            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
           )}
         </section>
         <Footer />
