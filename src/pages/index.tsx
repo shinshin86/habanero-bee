@@ -4,12 +4,11 @@ import LinkCard from '../components/LinkCard';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageTopButton from '../components/PageTopButton';
-import OtherLinks from '../components/OtherLinks';
 import AvatarImage from '../components/AvatarImage';
 import { isValidData } from '../utils/validate';
-import { getLinks, checkHasOtherLinks } from '../utils/link';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticProps } from 'next';
+import ExternalLinks from '@/components/ExternalLinks';
 
 export const config = {
   amp: true,
@@ -25,12 +24,11 @@ const IndexPage: React.FC<{
     description,
     logoImage,
     logoImageAltText,
+    externalLinkUrl,
+    externalLinkText,
     backgroundColor,
     pageTopButtonColor,
   } = general;
-
-  const links = getLinks(general);
-  const hasOtherLinks = checkHasOtherLinks(links);
 
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
@@ -69,11 +67,8 @@ const IndexPage: React.FC<{
             <LinkCard {...data} key={index} />
           ))}
           <hr />
-          {hasOtherLinks && (
-            <div>
-              <h3>LINKS</h3>
-              <OtherLinks links={links} />
-            </div>
+          {externalLinkUrl && (
+            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
           )}
         </section>
         <Footer />
