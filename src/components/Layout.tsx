@@ -260,7 +260,8 @@ const Layout: React.FC<{
 
         strong,
         b {
-          color: #313f47;
+          font-weight: bold;
+          color: #191919;
         }
 
         em,
