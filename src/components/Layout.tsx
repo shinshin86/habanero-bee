@@ -623,9 +623,8 @@ const Layout: React.FC<{ children: any; backgroundColorCode: string }> = ({
           margin-top: 8px;
         }
 
-        .other-links-container {
-          margin: 0 auto;
-          width: 250px;
+        .external-link {
+          margin-top: 24px;
         }
 
         .tag-link-list-container {

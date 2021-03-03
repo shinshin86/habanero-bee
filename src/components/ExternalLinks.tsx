@@ -11,7 +11,7 @@ const ExternalLinks: React.FC<{ url: string; text: string }> = ({
       <h3>External link</h3>
       <ul className="external-link-container">
         {externalLinks.map((link) => (
-          <li key={link.url} style={{ marginTop: 16 }}>
+          <li key={link.url} className="external-link">
             <a
               href={link.url}
               target="_blank"
