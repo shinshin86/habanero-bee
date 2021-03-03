@@ -38,18 +38,21 @@ const LinkCard: React.FC<Content> = ({
         <p className="description-text">{descriptionText}</p>
       </a>
       {externalLinkUrl && (
-        <ul className="external-link-container">
-          <li key={externalLinkUrl}>
-            <a
-              href={externalLinkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="webapp-button"
-            >
-              {externalLinkText || 'Read'}
-            </a>
-          </li>
-        </ul>
+        <div>
+          <h3>External link</h3>
+          <ul className="external-link-container">
+            <li key={externalLinkUrl}>
+              <a
+                href={externalLinkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="webapp-button"
+              >
+                {externalLinkText || 'Read'}
+              </a>
+            </li>
+          </ul>
+        </div>
       )}
     </li>
   );

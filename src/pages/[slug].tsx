@@ -3,11 +3,9 @@ import Analytics from '../components/Analytics';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageTopButton from '../components/PageTopButton';
-import OtherLinks from '../components/OtherLinks';
 import TagLinks from '../components/TagLinks';
 import { isValidData } from '../utils/validate';
 import { getTagList } from '../utils/tags';
-import { getLinks, checkHasOtherLinks } from '../utils/link';
 import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -23,9 +21,6 @@ const DetailPage: React.FC<{
 }> = ({ general, contentData, meta }): JSX.Element => {
   const { title: pageTitle } = general;
 
-  const links = getLinks(general);
-  const hasOtherLinks = checkHasOtherLinks(links);
-
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
   const {
@@ -36,6 +31,8 @@ const DetailPage: React.FC<{
     imageAltText,
     tags,
     renderedHTML,
+    externalLinkUrl,
+    externalLinkText,
   } = contentData;
   const tagList = getTagList(tags);
 
@@ -88,10 +85,21 @@ const DetailPage: React.FC<{
           </header>
 
           <hr />
-          {hasOtherLinks && (
+          {externalLinkUrl && (
             <div>
-              <h3>LINKS</h3>
-              <OtherLinks links={links} />
+              <h3>External link</h3>
+              <ul className="external-link-container">
+                <li key={externalLinkUrl}>
+                  <a
+                    href={externalLinkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="webapp-button"
+                  >
+                    {externalLinkText || 'Read'}
+                  </a>
+                </li>
+              </ul>
             </div>
           )}
         </section>
