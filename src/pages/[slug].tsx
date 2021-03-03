@@ -10,7 +10,6 @@ import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
-import { getExternalLinks, ExternalLink } from '@/utils/external-link';
 
 export const config = {
   amp: true,
@@ -38,11 +37,6 @@ const DetailPage: React.FC<{
   } = contentData;
 
   const tagList = getTagList(tags);
-
-  const externalLinks: Array<ExternalLink> = getExternalLinks(
-    externalLinkUrl,
-    externalLinkText
-  );
 
   return (
     <Layout>
@@ -93,8 +87,8 @@ const DetailPage: React.FC<{
           </header>
 
           <hr />
-          {externalLinkUrl.length && (
-            <ExternalLinks externalLinks={externalLinks} />
+          {externalLinkUrl && (
+            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
           )}
         </section>
         <Footer />
