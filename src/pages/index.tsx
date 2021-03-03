@@ -26,6 +26,7 @@ const IndexPage: React.FC<{
     logoImage,
     logoImageAltText,
     backgroundColor,
+    pageTopButtonColor,
   } = general;
 
   const links = getLinks(general);
@@ -34,7 +35,10 @@ const IndexPage: React.FC<{
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
   return (
-    <Layout backgroundColorCode={backgroundColor}>
+    <Layout
+      backgroundColorCode={backgroundColor}
+      pageTopButtonColorCode={pageTopButtonColor}
+    >
       <Header
         siteUrl={meta.siteUrl}
         title={meta.title}

@@ -20,7 +20,7 @@ const DetailPage: React.FC<{
   contentData: Content;
   meta: Meta;
 }> = ({ general, contentData, meta }): JSX.Element => {
-  const { title: pageTitle, backgroundColor } = general;
+  const { title: pageTitle, backgroundColor, pageTopButtonColor } = general;
 
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
@@ -39,7 +39,10 @@ const DetailPage: React.FC<{
   const tagList = getTagList(tags);
 
   return (
-    <Layout backgroundColorCode={backgroundColor}>
+    <Layout
+      backgroundColorCode={backgroundColor}
+      pageTopButtonColorCode={pageTopButtonColor}
+    >
       <Header
         siteUrl={`${meta.siteUrl}/${contentData.slug}`}
         title={`${title} | ${meta.title}`}

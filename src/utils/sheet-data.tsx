@@ -12,6 +12,7 @@ export interface General {
   patreonLink?: string;
   quoraLink?: string;
   backgroundColor?: string;
+  pageTopButtonColor?: string;
 }
 
 export interface Meta {
