@@ -1,8 +1,13 @@
 /* @ts-ignore  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const Layout: React.FC<{ children: any; backgroundColorCode: string }> = ({
+const Layout: React.FC<{
+  children: any;
+  backgroundColorCode: string;
+  pageTopButtonColorCode: string;
+}> = ({
   children,
   backgroundColorCode,
+  pageTopButtonColorCode,
 }): JSX.Element => {
   return (
     <>
@@ -649,7 +654,7 @@ const Layout: React.FC<{ children: any; backgroundColorCode: string }> = ({
           border-radius: 50%;
           border: none;
           outline: none;
-          background: #a8b313;
+          background: ${pageTopButtonColorCode || '#a8b313'};
           z-index: 9999;
           bottom: 1rem;
           right: 1rem;

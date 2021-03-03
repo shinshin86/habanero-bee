@@ -22,7 +22,13 @@ const TagPage: React.FC<{
   meta: Meta;
   tag: string;
 }> = ({ general, content, meta, tag }): JSX.Element => {
-  const { title, logoImage, logoImageAltText, backgroundColor } = general;
+  const {
+    title,
+    logoImage,
+    logoImageAltText,
+    backgroundColor,
+    pageTopButtonColor,
+  } = general;
 
   const links = getLinks(general);
   const hasOtherLinks = checkHasOtherLinks(links);
@@ -30,7 +36,10 @@ const TagPage: React.FC<{
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
   return (
-    <Layout backgroundColorCode={backgroundColor}>
+    <Layout
+      backgroundColorCode={backgroundColor}
+      pageTopButtonColorCode={pageTopButtonColor}
+    >
       <Header
         siteUrl={meta.siteUrl}
         title={meta.title}
