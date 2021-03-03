@@ -20,7 +20,13 @@ const IndexPage: React.FC<{
   content: Array<Content>;
   meta: Meta;
 }> = ({ general, content, meta }): JSX.Element => {
-  const { title, description, logoImage, logoImageAltText } = general;
+  const {
+    title,
+    description,
+    logoImage,
+    logoImageAltText,
+    backgroundColor,
+  } = general;
 
   const links = getLinks(general);
   const hasOtherLinks = checkHasOtherLinks(links);
@@ -28,7 +34,7 @@ const IndexPage: React.FC<{
   const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
 
   return (
-    <Layout>
+    <Layout backgroundColorCode={backgroundColor}>
       <Header
         siteUrl={meta.siteUrl}
         title={meta.title}

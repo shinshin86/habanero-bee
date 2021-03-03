@@ -11,6 +11,7 @@ export interface General {
   tumblrLink?: string;
   patreonLink?: string;
   quoraLink?: string;
+  backgroundColor?: string;
 }
 
 export interface Meta {
