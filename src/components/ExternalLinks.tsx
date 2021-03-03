@@ -1,7 +1,4 @@
-export interface ExternalLink {
-  url: string;
-  text: string;
-}
+import { ExternalLink } from '@/utils/external-link';
 
 const ExternalLinks: React.FC<{ externalLinks: Array<ExternalLink> }> = ({
   externalLinks,
@@ -10,7 +7,7 @@ const ExternalLinks: React.FC<{ externalLinks: Array<ExternalLink> }> = ({
     <h3>External link</h3>
     <ul className="external-link-container">
       {externalLinks.map((link) => (
-        <li key={link.url}>
+        <li key={link.url} style={{ marginTop: 16 }}>
           <a
             href={link.url}
             target="_blank"

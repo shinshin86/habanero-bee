@@ -9,7 +9,8 @@ import { getTagList } from '../utils/tags';
 import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import ExternalLinks, { ExternalLink } from '@/components/ExternalLinks';
+import ExternalLinks from '@/components/ExternalLinks';
+import { getExternalLinks, ExternalLink } from '@/utils/external-link';
 
 export const config = {
   amp: true,
@@ -38,9 +39,10 @@ const DetailPage: React.FC<{
 
   const tagList = getTagList(tags);
 
-  const externalLinks: Array<ExternalLink> = [
-    { url: externalLinkUrl, text: externalLinkText },
-  ];
+  const externalLinks: Array<ExternalLink> = getExternalLinks(
+    externalLinkUrl,
+    externalLinkText
+  );
 
   return (
     <Layout>
