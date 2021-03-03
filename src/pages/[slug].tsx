@@ -9,6 +9,7 @@ import { getTagList } from '../utils/tags';
 import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import ExternalLinks, { ExternalLink } from '@/components/ExternalLinks';
 
 export const config = {
   amp: true,
@@ -34,7 +35,12 @@ const DetailPage: React.FC<{
     externalLinkUrl,
     externalLinkText,
   } = contentData;
+
   const tagList = getTagList(tags);
+
+  const externalLinks: Array<ExternalLink> = [
+    { url: externalLinkUrl, text: externalLinkText },
+  ];
 
   return (
     <Layout>
@@ -85,22 +91,8 @@ const DetailPage: React.FC<{
           </header>
 
           <hr />
-          {externalLinkUrl && (
-            <div>
-              <h3>External link</h3>
-              <ul className="external-link-container">
-                <li key={externalLinkUrl}>
-                  <a
-                    href={externalLinkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="webapp-button"
-                  >
-                    {externalLinkText || 'Read'}
-                  </a>
-                </li>
-              </ul>
-            </div>
+          {externalLinkUrl.length && (
+            <ExternalLinks externalLinks={externalLinks} />
           )}
         </section>
         <Footer />
