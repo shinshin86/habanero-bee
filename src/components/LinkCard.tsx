@@ -18,7 +18,7 @@ const LinkCard: React.FC<Content> = ({
   const linkUrl = `/${slug}`;
   const tagList = getTagList(tags);
   const descriptionText =
-    description || getDescriptionText(getTextContent(text));
+    getDescriptionText(description) || getDescriptionText(getTextContent(text));
 
   return (
     <li className="link-card-list" key={title}>

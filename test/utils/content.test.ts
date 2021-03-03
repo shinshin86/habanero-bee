@@ -7,14 +7,21 @@ import {
 
 describe('getDescriptionText', (): void => {
   test('Should return same string, if string does not exceed 30 characters.', (): void => {
-    const text = '123456789012345678901234567890';
+    const text =
+      '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890';
     expect(getDescriptionText(text)).toBe(text);
   });
 
-  test('Should cut the string at 30 characters and use "...", if string does exceed 30 characters.', (): void => {
-    const text = '1234567890123456789012345678901';
-    const expectedText = '123456789012345678901234567890...';
+  test('Should cut the string at 100 characters and use "...", if string does over 100 characters.', (): void => {
+    const text =
+      '12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901';
+    const expectedText =
+      '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890...';
     expect(getDescriptionText(text)).toBe(expectedText);
+  });
+
+  test('Should return an empty character, If undefined is passed.', (): void => {
+    expect(getDescriptionText(undefined)).toBeFalsy();
   });
 });
 

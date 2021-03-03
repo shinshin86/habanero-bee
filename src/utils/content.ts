@@ -1,11 +1,13 @@
 import markdownIt from 'markdown-it';
 const mi = markdownIt({ breaks: true });
 
-export const getDescriptionText = (text: string): string => {
-  if (text.length <= 30) {
+export const getDescriptionText = (text: string | undefined): string => {
+  if (!text) return '';
+
+  if (text.length <= 100) {
     return text;
   } else {
-    return text.slice(0, 30) + '...';
+    return text.slice(0, 100) + '...';
   }
 };
 
