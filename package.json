@@ -4,11 +4,9 @@
   "description": "Habanero Bee is a simple AMP-compliant CMS system that makes it easy to create content using Google Sheets.",
   "scripts": {
     "dev": "next",
-    "dev2": "SHEET_URL=https://script.google.com/macros/s/AKfycbxM0Ae-22nF2T0gN6lOdoqCX_4_3FpUk654r9e-N_7bKBoTanzmBOY/exec yarn dev",
     "build": "next build",
     "start": "next start",
     "deploy": "yarn favicon && yarn sitemap && next build && next export",
-    "deploy2": "yarn clean && SHEET_URL=https://script.google.com/macros/s/AKfycbxM0Ae-22nF2T0gN6lOdoqCX_4_3FpUk654r9e-N_7bKBoTanzmBOY/exec yarn deploy && yarn start",
     "clean": "rm -rf out/",
     "format": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",

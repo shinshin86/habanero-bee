@@ -71,6 +71,34 @@ yarn lint .
 yarn allcheck
 ```
 
+## TIPS for development 🚀
+
+When I develop locally, I set up my own commands like this to develop.
+
+```diff
+diff --git a/package.json b/package.json
+index b461d8a..a3625c1 100644
+--- a/package.json
++++ b/package.json
+@@ -4,9 +4,11 @@
+   "description": "Habanero Bee is a simple AMP-compliant CMS system that makes it easy to create content using Google Sheets.",
+   "scripts": {
+     "dev": "next",
++    "dev2": "SHEET_URL=<Google Sheets published URL> yarn dev",
+     "build": "next build",
+     "start": "next start",
+     "deploy": "yarn favicon && yarn sitemap && next build && next export",
++    "deploy2": "yarn clean && SHEET_URL=<Google Sheets published URL> yarn deploy && yarn start",
+     "clean": "rm -rf out/",
+     "format": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
+     "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
+```
+
+### Note:
+
+Be careful not to `push` it by mistake.
+Of course, there is nothing wrong with making that URL public (As long as you don't write any secure information on it.), and archiving the URL will disable it.
+
 ## Habanero Bee uses the power of open source 🌋
 
 ### Using HTML5 UP
