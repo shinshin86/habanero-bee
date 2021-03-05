@@ -470,7 +470,7 @@ const Layout: React.FC<{
           -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
           -ms-transition: opacity 1s ease, -ms-transform 1s ease;
           transition: opacity 1s ease, transform 1s ease;
-          padding: 4.5em 3em 3em 3em;
+          padding: 4.5em 2em 3em;
           background: #ffffff;
           border-radius: 4px;
           cursor: default;
@@ -499,8 +499,8 @@ const Layout: React.FC<{
           display: block;
           position: absolute;
           top: 50%;
-          left: -3em;
-          width: calc(100% + 6em);
+          left: -2em;
+          width: calc(100% + 4em);
           height: 1px;
           z-index: -1;
           background: #c8cccf;
