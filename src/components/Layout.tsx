@@ -602,7 +602,7 @@ const Layout: React.FC<{
         .webapp-button {
           background: #f2f2f7;
           border-radius: 40px;
-          padding: 10px 20px;
+          padding: 10px 16px;
         }
 
         .webapp-button:hover {
@@ -634,15 +634,20 @@ const Layout: React.FC<{
         }
 
         .tag-link-list-container {
-          margin: 32px;
+          margin: 32px 0px;
           list-style: none;
+          padding-left: 0;
+        }
+
+        .multiple-tags {
           display: flex;
           justify-content: space-between;
-          padding-left: 0;
+          flex-wrap: wrap;
         }
 
         .tag-list {
           padding-left: 0;
+          margin: 16px;
         }
 
         /* scrollToTopButton */
