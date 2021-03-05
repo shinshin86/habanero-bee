@@ -609,6 +609,12 @@ const Layout: React.FC<{
           background: #faf2f7;
         }
 
+        .disable-external-link-button {
+          background: #a9a9ab;
+          border-radius: 40px;
+          padding: 10px 16px;
+        }
+
         .link-card-list {
           list-style: none;
           padding-top: 8px;
@@ -676,6 +682,11 @@ const Layout: React.FC<{
           position: absolute;
           top: -72px;
           left: 0;
+        }
+        /* prev next links */
+        .prev-next-links {
+          display: flex;
+          justify-content: space-between;
         }
       `}</style>
     </>

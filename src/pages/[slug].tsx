@@ -11,6 +11,7 @@ import { renderHTML, getMetaDescriptionText } from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
+import PrevNextLinks from '@/components/PrevNextLinks';
 
 export const config = {
   amp: true,
@@ -37,6 +38,8 @@ const DetailPage: React.FC<{
     externalLinkText,
     publishedDate,
     dateFormat,
+    prevPageUrl,
+    nextPageUrl,
   } = contentData;
 
   const tagList = getTagList(tags);
@@ -94,7 +97,7 @@ const DetailPage: React.FC<{
               `<div>${text}</div>`
             )}
           </header>
-
+          <PrevNextLinks prevPageUrl={prevPageUrl} nextPageUrl={nextPageUrl} />
           <hr />
           {externalLinkUrl && (
             <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
@@ -137,6 +140,14 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const { general, meta, content } = response;
   const contentData = content.find((c: Content) => c.slug === params.slug);
   contentData.renderedHTML = renderHTML(contentData.text);
+
+  const slugList = content.map((c: Content) => c.slug);
+  const targetPageIndex = slugList.indexOf(params.slug);
+  contentData.prevPageUrl =
+    targetPageIndex && `/${slugList[targetPageIndex - 1]}`;
+  contentData.nextPageUrl =
+    slugList.length > targetPageIndex + 1 &&
+    `/${slugList[targetPageIndex + 1]}`;
 
   if (!isValidData(general, meta, new Array(contentData))) {
     throw new Error('BUILD ERROR: Invalid sheet data');

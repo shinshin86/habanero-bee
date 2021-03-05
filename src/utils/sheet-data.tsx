@@ -32,4 +32,6 @@ export interface Content {
   renderedHTML?: string;
   publishedDate?: Date;
   dateFormat?: string;
+  prevPageUrl?: string;
+  nextPageUrl?: string;
 }
