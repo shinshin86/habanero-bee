@@ -8,7 +8,7 @@ const OtherLinks: React.FC<{ links: any }> = ({ links }): JSX.Element => (
           <li key={index} className="external-link">
             <a
               href={links[key]}
-              className="webapp-button"
+              className="external-link-button"
               target="_blank"
               rel="noopener noreferrer"
             >

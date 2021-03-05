@@ -599,13 +599,13 @@ const Layout: React.FC<{
           height: 100%;
         }
 
-        .webapp-button {
+        .external-link-button {
           background: #f2f2f7;
           border-radius: 40px;
           padding: 10px 16px;
         }
 
-        .webapp-button:hover {
+        .external-link-button:hover {
           background: #faf2f7;
         }
 

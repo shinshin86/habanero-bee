@@ -9,7 +9,7 @@ const TagLinks: React.FC<{ tags: Array<string> }> = ({ tags }): JSX.Element => {
     >
       {tags.map((tag, index) => (
         <li key={index} className={haveMultipleTags && 'tag-list'}>
-          <a href={`/tags/${tag}`} className="webapp-button">
+          <a href={`/tags/${tag}`} className="external-link-button">
             {tag}
           </a>
         </li>
