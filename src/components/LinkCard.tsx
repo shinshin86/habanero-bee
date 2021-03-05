@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import TagLinks from './TagLinks';
 import { getTagList } from '../utils/tags';
 import { getDescriptionText, getTextContent } from '../utils/content';
@@ -14,6 +15,8 @@ const LinkCard: React.FC<Content> = ({
   slug,
   externalLinkUrl,
   externalLinkText,
+  publishedDate,
+  dateFormat,
 }): JSX.Element => {
   const linkUrl = `/${slug}`;
   const tagList = getTagList(tags);
@@ -24,6 +27,9 @@ const LinkCard: React.FC<Content> = ({
     <li className="link-card-list" key={title}>
       <a href={linkUrl}>
         <h2>{title}</h2>
+        {publishedDate && (
+          <p>{dayjs(publishedDate).format(dateFormat || 'YYYY/MM/DD')}</p>
+        )}
       </a>
       {!!tagList.length && <TagLinks tags={tagList} />}
       <a href={linkUrl}>
