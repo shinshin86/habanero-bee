@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import Layout from '../components/Layout';
 import Analytics from '../components/Analytics';
 import Header from '../components/Header';
@@ -34,6 +35,8 @@ const DetailPage: React.FC<{
     renderedHTML,
     externalLinkUrl,
     externalLinkText,
+    publishedDate,
+    dateFormat,
   } = contentData;
 
   const tagList = getTagList(tags);
@@ -82,6 +85,9 @@ const DetailPage: React.FC<{
               />
             </span>
             <h2>{title}</h2>
+            {publishedDate && (
+              <p>{dayjs(publishedDate).format(dateFormat || 'YYYY/MM/DD')}</p>
+            )}
             {renderedHTML ? (
               <div dangerouslySetInnerHTML={{ __html: renderedHTML }} />
             ) : (

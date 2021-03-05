@@ -30,4 +30,6 @@ export interface Content {
   externalLinkText?: string;
   tags?: string;
   renderedHTML?: string;
+  publishedDate?: Date;
+  dateFormat?: string;
 }
