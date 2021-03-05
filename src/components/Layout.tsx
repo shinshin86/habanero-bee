@@ -470,7 +470,7 @@ const Layout: React.FC<{
           -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
           -ms-transition: opacity 1s ease, -ms-transform 1s ease;
           transition: opacity 1s ease, transform 1s ease;
-          padding: 4.5em 3em 3em 3em;
+          padding: 4.5em 2em 3em;
           background: #ffffff;
           border-radius: 4px;
           cursor: default;
@@ -499,8 +499,8 @@ const Layout: React.FC<{
           display: block;
           position: absolute;
           top: 50%;
-          left: -3em;
-          width: calc(100% + 6em);
+          left: -2em;
+          width: calc(100% + 4em);
           height: 1px;
           z-index: -1;
           background: #c8cccf;
@@ -599,13 +599,13 @@ const Layout: React.FC<{
           height: 100%;
         }
 
-        .webapp-button {
+        .external-link-button {
           background: #f2f2f7;
           border-radius: 40px;
-          padding: 10px 20px;
+          padding: 10px 16px;
         }
 
-        .webapp-button:hover {
+        .external-link-button:hover {
           background: #faf2f7;
         }
 
@@ -634,15 +634,20 @@ const Layout: React.FC<{
         }
 
         .tag-link-list-container {
-          margin: 32px;
+          margin: 32px 0px;
           list-style: none;
+          padding-left: 0;
+        }
+
+        .multiple-tags {
           display: flex;
           justify-content: space-between;
-          padding-left: 0;
+          flex-wrap: wrap;
         }
 
         .tag-list {
           padding-left: 0;
+          margin: 16px;
         }
 
         /* scrollToTopButton */

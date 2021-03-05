@@ -16,7 +16,7 @@ const ExternalLinks: React.FC<{ url: string; text: string }> = ({
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="webapp-button"
+              className="external-link-button"
             >
               {link.text || 'Read'}
             </a>
