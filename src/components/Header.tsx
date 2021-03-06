@@ -9,9 +9,11 @@ const Header: React.FC<Meta> = ({
   ogpImage,
   description,
   googleSiteVerificationCode,
+  noindex,
 }): JSX.Element => (
   <Head>
     <meta charSet="utf-8" />
+    {noindex && <meta name="robots" content="noindex" />}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     {/* primary meta tags */}
     <title>{title}</title>

@@ -17,6 +17,7 @@ export interface Meta {
   keywords?: string;
   googleAnalyticsTrackingId?: string;
   googleSiteVerificationCode?: string;
+  noindex?: boolean;
 }
 
 export interface Content {

@@ -30,7 +30,11 @@ const IndexPage: React.FC<{
     pageTopButtonColor,
   } = general;
 
-  const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
+  const {
+    googleAnalyticsTrackingId,
+    googleSiteVerificationCode,
+    noindex,
+  } = meta;
 
   return (
     <Layout
@@ -43,6 +47,7 @@ const IndexPage: React.FC<{
         description={meta.description}
         ogpImage={meta.ogpImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
+        noindex={noindex}
       />
       {googleAnalyticsTrackingId && (
         <Analytics trackingId={googleAnalyticsTrackingId} />
