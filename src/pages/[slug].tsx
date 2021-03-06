@@ -24,7 +24,11 @@ const DetailPage: React.FC<{
 }> = ({ general, contentData, meta }): JSX.Element => {
   const { title: pageTitle, backgroundColor, pageTopButtonColor } = general;
 
-  const { googleAnalyticsTrackingId, googleSiteVerificationCode } = meta;
+  const {
+    googleAnalyticsTrackingId,
+    googleSiteVerificationCode,
+    noindex,
+  } = meta;
 
   const {
     title,
@@ -55,6 +59,7 @@ const DetailPage: React.FC<{
         description={description || getMetaDescriptionText(text)}
         ogpImage={imagePath || meta.ogpImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
+        noindex={noindex}
       />
       {googleAnalyticsTrackingId && (
         <Analytics trackingId={googleAnalyticsTrackingId} />
