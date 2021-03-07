@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "dayjs": "^1.10.4",
+    "img2amp-img": "^0.0.1",
     "markdown-it": "^12.0.4",
     "next": "^10.0.7",
     "node-fetch": "^2.6.1",
@@ -49,6 +50,7 @@
     "react-dom": "^17.0.1",
     "sharp": "^0.27.1",
     "simple-favicon-generator": "^0.0.1",
+    "string-replace-async": "^2.0.0",
     "very-simple-sitemap-generator": "^0.1.0"
   },
   "devDependencies": {

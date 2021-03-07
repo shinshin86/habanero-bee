@@ -1,5 +1,9 @@
 import markdownIt from 'markdown-it';
 const mi = markdownIt({ breaks: true });
+/* eslint-disable @typescript-eslint/no-var-requires */
+const img2AmpImg = require('img2amp-img');
+const replaceAsync = require('string-replace-async');
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 export const getDescriptionText = (text: string | undefined): string => {
   if (!text) return '';
@@ -38,4 +42,17 @@ export const getTextContent = (markdownText: string): string => {
 
 export const getMetaDescriptionText = (markdownText: string): string => {
   return getTextContent(markdownText).replace(/\n/g, '');
+};
+
+export const convertAmpImg = async (html: string): Promise<string> => {
+  const ampImg = await replaceAsync(
+    html,
+    /<img(.|\s)*?>/gi,
+    async (match: string) => {
+      const ampImg = await img2AmpImg(match);
+      return ampImg;
+    }
+  );
+
+  return ampImg;
 };
