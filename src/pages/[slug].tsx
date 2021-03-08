@@ -150,7 +150,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const contentData = content.find((c: Content) => c.slug === params.slug);
   const renderedHTML = renderHTML(contentData.text);
 
-  // convert to amp-img
   const imgList = renderedHTML.match(/<img(.|\s)*?>/gi);
   contentData.renderedHTML = !imgList
     ? renderedHTML
