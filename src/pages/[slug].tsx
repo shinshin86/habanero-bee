@@ -7,7 +7,11 @@ import PageTopButton from '../components/PageTopButton';
 import TagLinks from '../components/TagLinks';
 import { isValidData } from '../utils/validate';
 import { getTagList } from '../utils/tags';
-import { renderHTML, getMetaDescriptionText } from '../utils/content';
+import {
+  renderHTML,
+  getMetaDescriptionText,
+  convertAmpImg,
+} from '../utils/content';
 import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
@@ -144,7 +148,12 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const response = await fetch(SHEET_URL).then((r) => r.json());
   const { general, meta, content } = response;
   const contentData = content.find((c: Content) => c.slug === params.slug);
-  contentData.renderedHTML = renderHTML(contentData.text);
+  const renderedHTML = renderHTML(contentData.text);
+
+  const imgList = renderedHTML.match(/<img(.|\s)*?>/gi);
+  contentData.renderedHTML = !imgList
+    ? renderedHTML
+    : await convertAmpImg(renderedHTML);
 
   const slugList = content.map((c: Content) => c.slug);
   const targetPageIndex = slugList.indexOf(params.slug);
