@@ -3,6 +3,7 @@ import {
   renderHTML,
   getTextContent,
   getMetaDescriptionText,
+  convertAmpImg,
 } from '@/utils/content';
 
 describe('getDescriptionText', (): void => {
@@ -66,5 +67,33 @@ BB
 CC`;
     const expectedText = `AABBCC`;
     expect(getMetaDescriptionText(mdText)).toBe(expectedText);
+  });
+});
+
+describe('convertAmpImg', (): void => {
+  test('Should return converted amp-img tag from img tag.', async (): Promise<void> => {
+    const html =
+      '<h3>test</h3><img src="./public/images/no-image.png" alt="No Image" />';
+    const expectedHTML = `<h3>test</h3><amp-img
+  alt="No Image"
+  src="./public/images/no-image.png"
+  width="515"
+  height="515"
+  layout="responsive"
+></amp-img>`;
+    const convertedHTML = await convertAmpImg(html);
+    expect(convertedHTML).toBe(expectedHTML);
+  });
+
+  test('Should return same HTML, if no image tag.', async (): Promise<void> => {
+    const convertedHTML = await convertAmpImg('<h3>test</h3>');
+    const expectedHTML = '<h3>test</h3>';
+    expect(convertedHTML).toBe(expectedHTML);
+  });
+
+  test('Should return empty string, if argument is empty string.', async (): Promise<void> => {
+    const convertedHTML = await convertAmpImg('');
+    const expectedHTML = '';
+    expect(convertedHTML).toBe(expectedHTML);
   });
 });
