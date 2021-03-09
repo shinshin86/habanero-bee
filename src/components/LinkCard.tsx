@@ -4,6 +4,7 @@ import { getTagList } from '../utils/tags';
 import { getDescriptionText, getTextContent } from '../utils/content';
 import { Content } from '../utils/sheet-data';
 import ExternalLinks from '@/components/ExternalLinks';
+import { getSlugText } from '@/utils/slug';
 
 const LinkCard: React.FC<Content> = ({
   title,
@@ -18,7 +19,7 @@ const LinkCard: React.FC<Content> = ({
   publishedDate,
   dateFormat,
 }): JSX.Element => {
-  const linkUrl = `/${slug}`;
+  const linkUrl = `/${getSlugText(slug)}`;
   const tagList = getTagList(tags);
   const descriptionText =
     getDescriptionText(description) || getDescriptionText(getTextContent(text));

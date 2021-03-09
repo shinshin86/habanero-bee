@@ -10,6 +10,7 @@ import { isValidData } from '../../utils/validate';
 import { General, Meta, Content } from '../../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
+import { getSlugText } from '@/utils/slug';
 
 export const config = {
   amp: true,
@@ -110,7 +111,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const uniqueTagList = tagList.filter(
     (tag, index, self) => self.indexOf(tag) === index
   );
-  const paths = uniqueTagList.map((t) => `/tags/${t}`);
+  const paths = uniqueTagList.map((t) => `/tags/${getSlugText(t)}`);
 
   return { paths, fallback: false };
 };
@@ -132,7 +133,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const { general, meta, content } = response;
 
   const contentList = content.filter((c: Content) => {
-    return getTagList(c.tags).includes(params.tag);
+    return getTagList(getSlugText(c.tags)).includes(params.tag);
   });
 
   if (!isValidData(general, meta, contentList)) {
