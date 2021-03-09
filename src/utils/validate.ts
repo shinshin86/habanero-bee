@@ -13,8 +13,12 @@ const isValidMetaData = (obj: Meta): boolean => {
 const isValidContentData = (contentList: Array<Content>): boolean => {
   const slugList: Array<string> = [];
   for (const content of contentList) {
-    const { title, text, slug } = content;
+    const { title, text, slug, tags } = content;
     if (!title || !text || !slug) return false;
+
+    if (hasIncludeSlash(slug)) return false;
+
+    if (tags && hasIncludeSlash(tags)) return false;
 
     slugList.push(slug);
   }
@@ -31,6 +35,8 @@ const hasDuplicateSlug = (slugList: Array<string>): boolean => {
   const slugSet = new Set(slugList);
   return slugSet.size !== slugList.length;
 };
+
+const hasIncludeSlash = (tags: string): boolean => tags.indexOf('/') !== -1;
 
 export const isValidData = (
   general: General,
