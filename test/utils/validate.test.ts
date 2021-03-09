@@ -121,4 +121,80 @@ describe('isValidData', (): void => {
 
     expect(isValidData(general, meta, contentList)).toBeFalsy();
   });
+
+  test('Should return false, If data is invalid. (Case of content slug include slash)', (): void => {
+    const general: General = { title: 'test', description: 'test' };
+    const meta: Meta = {
+      siteUrl: 'test',
+      title: 'test',
+      description: 'test',
+      ogpImage: 'test',
+    };
+    const contentList: Array<Content> = [
+      {
+        title: 'test1',
+        text: 'test1',
+        slug: 'test1',
+      },
+      {
+        title: 'test2',
+        text: 'test2',
+        slug: 'te/st2',
+      },
+    ];
+
+    expect(isValidData(general, meta, contentList)).toBeFalsy();
+  });
+
+  test('Should return true, If all data is valid. (Include tags)', (): void => {
+    const general: General = { title: 'test', description: 'test' };
+    const meta: Meta = {
+      siteUrl: 'test',
+      title: 'test',
+      description: 'test',
+      ogpImage: 'test',
+    };
+    const contentList: Array<Content> = [
+      {
+        title: 'test1',
+        text: 'test1',
+        slug: 'test1',
+        tags: 'test, post',
+      },
+      {
+        title: 'test2',
+        text: 'test2',
+        slug: 'test2',
+        tags: 'test, post',
+      },
+    ];
+
+    expect(isValidData(general, meta, contentList)).toBeTruthy();
+  });
+
+  test('Should return false, If data is invalid. (Case of content tags include slash)', (): void => {
+    const general: General = { title: 'test', description: 'test' };
+    const meta: Meta = {
+      siteUrl: 'test',
+      title: 'test',
+      description: 'test',
+      ogpImage: 'test',
+    };
+    const contentList: Array<Content> = [
+      {
+        title: 'test1',
+        text: 'test1',
+        slug: 'test1',
+        tags: 'test, post',
+      },
+      {
+        title: 'test2',
+        text: 'test2',
+        slug: 'test2',
+        tags: 'test, po/st',
+      },
+    ];
+
+    expect(isValidData(general, meta, contentList)).toBeFalsy();
+  });
 });
