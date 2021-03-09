@@ -16,6 +16,7 @@ import { General, Meta, Content } from '../utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import PrevNextLinks from '@/components/PrevNextLinks';
+import { getSlugText } from '@/utils/slug';
 
 export const config = {
   amp: true,
@@ -127,7 +128,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { SHEET_URL } = process.env;
 
   const response = await fetch(SHEET_URL).then((r) => r.json());
-  const paths = response.content.map((c: Content) => `/${c.slug}`);
+  const paths = response.content.map((c: Content) => `/${getSlugText(c.slug)}`);
 
   return { paths, fallback: false };
 };
@@ -158,10 +159,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const slugList = content.map((c: Content) => c.slug);
   const targetPageIndex = slugList.indexOf(params.slug);
   contentData.prevPageUrl =
-    targetPageIndex && `/${slugList[targetPageIndex - 1]}`;
+    targetPageIndex && `/${getSlugText(slugList[targetPageIndex - 1])}`;
   contentData.nextPageUrl =
     slugList.length > targetPageIndex + 1 &&
-    `/${slugList[targetPageIndex + 1]}`;
+    `/${getSlugText(slugList[targetPageIndex + 1])}`;
 
   if (!isValidData(general, meta, new Array(contentData))) {
     throw new Error('BUILD ERROR: Invalid sheet data');
