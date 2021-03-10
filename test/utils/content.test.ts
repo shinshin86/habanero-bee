@@ -1,6 +1,6 @@
 import {
   getDescriptionText,
-  renderHTML,
+  renderAmpHTML,
   getTextContent,
   getMetaDescriptionText,
   convertAmpImg,
@@ -26,19 +26,29 @@ describe('getDescriptionText', (): void => {
   });
 });
 
-describe('renderHTML', (): void => {
-  test('Should return converted HTML from markdown.', (): void => {
-    const mdText = '### test';
-    const expectedHTML = `<h3>test</h3>`;
-    expect(renderHTML(mdText)).toBe(expectedHTML);
+describe('renderAmpHTML', (): void => {
+  test('Should return converted AMP HTML from markdown.', async (): Promise<void> => {
+    const mdText = `### test
+![No Image](./public/images/no-image.png)`;
+    const expectedHTML = `<h3>test</h3><p><amp-img
+  alt="No Image"
+  src="./public/images/no-image.png"
+  width="515"
+  height="515"
+  layout="responsive"
+></amp-img></p>`;
+
+    const html = await renderAmpHTML(mdText);
+    expect(html).toBe(expectedHTML);
   });
 
-  test('Should convert to br tags from line breaks in markdown.', (): void => {
+  test('Should convert to br tags from line breaks in markdown.', async (): Promise<void> => {
     const mdText = `AA
 BB
 CC`;
     const expectedHTML = `<p>AA<br>BB<br>CC</p>`;
-    expect(renderHTML(mdText)).toBe(expectedHTML);
+    const html = await renderAmpHTML(mdText);
+    expect(html).toBe(expectedHTML);
   });
 });
 
