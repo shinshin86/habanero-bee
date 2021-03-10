@@ -1,5 +1,5 @@
 import markdownIt from 'markdown-it';
-const mi = markdownIt({ breaks: true });
+const mi = markdownIt({ breaks: true, html: true });
 /* eslint-disable @typescript-eslint/no-var-requires */
 const img2AmpImg = require('img2amp-img');
 const replaceAsync = require('string-replace-async');
