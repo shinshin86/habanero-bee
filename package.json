@@ -11,7 +11,7 @@
     "format": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
     "sitemap": "node scripts/gen-sitemap.js",
-    "favicon": "node scripts/gen-favicon.js public/ogp.png",
+    "favicon": "node scripts/gen-favicon.js",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "eslint --ext js,ts,tsx --fix",
     "allcheck": "yarn format && yarn type-check && yarn lint . && yarn test",
