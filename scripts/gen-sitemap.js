@@ -13,7 +13,7 @@ const getSlugText = (slug) => slug.toLowerCase();
 (async () => {
   const { SHEET_URL } = process.env;
   if (!SHEET_URL) {
-    console.log('SHEET_URL and SITE_TOP_URL is required.');
+    console.log('SHEET_URL is required.');
     console.log('Generate sitemap: ERROR');
     return;
   }
