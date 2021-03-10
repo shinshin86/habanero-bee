@@ -1,18 +1,18 @@
 import dayjs from 'dayjs';
-import Layout from '../components/Layout';
-import Analytics from '../components/Analytics';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import PageTopButton from '../components/PageTopButton';
-import TagLinks from '../components/TagLinks';
-import { isValidData } from '../utils/validate';
-import { getTagList } from '../utils/tags';
+import Layout from '@/components/Layout';
+import Analytics from '@/components/Analytics';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import PageTopButton from '@/components/PageTopButton';
+import TagLinks from '@/components/TagLinks';
+import { isValidData } from '@/utils/validate';
+import { getTagList } from '@/utils/tags';
 import {
   renderHTML,
   getMetaDescriptionText,
   convertAmpImg,
-} from '../utils/content';
-import { General, Meta, Content } from '../utils/sheet-data';
+} from '@/utils/content';
+import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import PrevNextLinks from '@/components/PrevNextLinks';

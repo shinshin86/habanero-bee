@@ -1,12 +1,12 @@
-import Layout from '../components/Layout';
-import Analytics from '../components/Analytics';
-import LinkCard from '../components/LinkCard';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import PageTopButton from '../components/PageTopButton';
-import AvatarImage from '../components/AvatarImage';
-import { isValidData } from '../utils/validate';
-import { General, Meta, Content } from '../utils/sheet-data';
+import Layout from '@/components/Layout';
+import Analytics from '@/components/Analytics';
+import LinkCard from '@/components/LinkCard';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import PageTopButton from '@/components/PageTopButton';
+import AvatarImage from '@/components/AvatarImage';
+import { isValidData } from '@/utils/validate';
+import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 

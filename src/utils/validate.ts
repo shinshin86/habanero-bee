@@ -1,4 +1,4 @@
-import { General, Meta, Content } from './sheet-data';
+import { General, Meta, Content } from '@/utils/sheet-data';
 
 const isValidGeneralData = (obj: General): boolean => {
   const { title, description } = obj;
