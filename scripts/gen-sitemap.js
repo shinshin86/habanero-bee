@@ -2,19 +2,45 @@ const fs = require('fs').promises;
 const generateSitemap = require('very-simple-sitemap-generator').default;
 const fetch = require('node-fetch');
 
+const getTagList = (tags) => {
+  if (!tags) return [];
+
+  return tags.replace(/\s+/g, '').split(',');
+};
+
+const getSlugText = (slug) => slug.toLowerCase();
+
 (async () => {
   const { SHEET_URL } = process.env;
   if (!SHEET_URL) {
-    console.log('SHEET_URL and SITE_TOP_URL is required.');
+    console.log('SHEET_URL is required.');
     console.log('Generate sitemap: ERROR');
     return;
   }
 
   const response = await fetch(SHEET_URL).then((r) => r.json());
   const { siteUrl } = response.meta;
+
   const urlList = response.content.map((c) => `${siteUrl}/${c.slug}`);
 
-  const sitemap = generateSitemap(urlList);
+  const tagList = [];
+  for (const c of response.content) {
+    const tList = getTagList(c.tags);
+    if (!tList.length) {
+      continue;
+    }
+
+    tagList.push(...tList);
+  }
+
+  const uniqueTagList = tagList.filter(
+    (tag, index, self) => self.indexOf(tag) === index
+  );
+  const uniqueTagUrlList = uniqueTagList.map(
+    (t) => `${siteUrl}/tags/${getSlugText(t)}`
+  );
+
+  const sitemap = generateSitemap(urlList.concat(uniqueTagUrlList));
   await fs.writeFile('public/sitemap.xml', sitemap);
 
   console.log('Generate sitemap: SUCCESS');
