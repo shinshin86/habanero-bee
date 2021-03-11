@@ -18,7 +18,6 @@
 
 - [Abstract](#abstract)
 - [Features](#features)
-
 - [Setup Habanero Bee Site](#setup-habanero-bee-site)
   - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
   - [Deploy to Netlify](#deploy-to-netlify)
