@@ -247,6 +247,11 @@ const Layout: React.FC<{
           text-decoration: none;
         }
 
+        p a {
+          color: #0814a9;
+          text-decoration: underline;
+        }
+
         a:before {
           -moz-transition: color 0.2s ease, text-shadow 0.2s ease;
           -webkit-transition: color 0.2s ease, text-shadow 0.2s ease;
