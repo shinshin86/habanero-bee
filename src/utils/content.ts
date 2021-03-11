@@ -37,7 +37,7 @@ export const renderAmpHTML = async (markdownText: string): Promise<string> => {
     ? renderedHTML
     : await convertAmpImg(renderedHTML);
 
-  // Since it has already been converted from markdown to HTML, I am looking for <code>~</code>.
+  // Since it has already been converted from markdown to HTML, I am looking for <code>youtube:~</code>.
   const youtubeLinkList = renderedAmpHTML.match(/<code>youtube:.*?<\/code>/gi);
 
   return !youtubeLinkList
@@ -91,7 +91,7 @@ data-videoid="${url.pathname.slice(1)}">
 };
 
 const convertAmpYoutube = async (html: string): Promise<string> => {
-  // Since it has already been converted from markdown to HTML, I am looking for <code>~</code>.
+  // Since it has already been converted from markdown to HTML, I am looking for <code>youtube:~</code>.
   const convertedHTML = await replaceAsync(
     html,
     /<code>youtube:.*?<\/code>/gi,
