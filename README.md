@@ -14,42 +14,81 @@
     <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
   </a>
 </p>
+## Table of Contents
 
-## WIP📌
+- [Abstract](#abstract)
+- [Features](#features)
 
-This project is work in progress to version to 0.1.0.
-I will update the version to 0.1.0 as soon as this task is completed.
+- [Setup Habanero Bee Site](#setup-habanero-bee-site)
+  - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
+  - [Deploy to Netlify](#deploy-to-netlify)
+- [For developers](#for-developers)
+  - [Development Usage](#development-usage)
+  - [Tips for development](#tips-for-development)
+- [Roadmap](#roadmap)
+- [Habanero Bee uses the power of open source](#habanero-bee-uses-the-power-of-open-source)
+  - [Using HTML5 UP](#using-html5-up)
+  - [Using Next.js](#using-next.js)
+- [Author](#author)
 
-- [x] Create a logo for this project.
-- [x] Create a unit test for a util functions.
-- [ ] Create a simple document on deploying a site using Habanero Bee.
-- [ ] And some minor fixes...
+## Abstract
 
-## Setup Habanero Bee Site 🛠
+![Habanero Bee - Abstract gif](https://user-images.githubusercontent.com/8216064/110764965-04f88300-8297-11eb-8977-cfc26ca137d2.gif)
 
-The data to be displayed on the site will be managed by Google Sheets.
+Habanero Bee is a static site generator that generates AMP-compliant sites created based on [Next.js](https://github.com/vercel/next.js/).
+When generating a site, the content can be managed with [Google Sheets](https://www.google.com/sheets/about/), and can also be used as a simple CMS system.
+The tool is designed to be deployed on [Netlify](https://www.netlify.com/) and excels at publishing to user content with little effort and time.
 
-If you want to use Google Sheets, you need to set up Google Apps Script as well.
-Don't worry. It's very easy to set up.
+## Features
 
-For more information about these settings, please refer to [this page (habanero-bee-google-apps-script)](https://github.com/shinshin86/habanero-bee-google-apps-script).
+Habanero Bee has three "Easy and Fast" features.
 
-## Deploy to Netlify 🌎
+- Easy and Fast generating AMP-compliant sites.
+  - It's easy to create an AMP-enabled site, and being AMP-enabled also ensures that your site will perform well.
+    (This is because being AMP-enabled also means that you are following web best practices.)
+- Easy and Fast manage your content on Google Sheets.
+  - The dashboard required for content management does not use in the Habanero Bee.
+    Everything from setting up your site to managing your content is done on Google Sheets!
+- Easy and Fast to publish a site.
+  - Habanero Bee is designed to be deployed using Netlify.
+    If you already have content on your Google Sheets in place for your site, [this section in button](#deploy-to-netlify) will get your site deployed in no time.
 
-This is deployed to Netlify for use.
-Specify the published URL of the Google spreadsheet you want to use as data.
+## Setup Habanero Bee Site
 
-Data structure of Spreadsheet is defined. If it is not structured correctly, the deployment will fail.
-For more information on data structures, see [this section](https://github.com/shinshin86/habanero-bee-google-apps-script).
+### Make a content on Google Sheets
+
+First, you need to create content for Habanero Bee in Google Sheets.
+
+Please refer to this document for instructions on how to create it( [this page (habanero-bee-google-apps-script)](https://github.com/shinshin86/habanero-bee-google-apps-script) ).
+
+If you just want to see the Habanero Bee in action first, skip this step, as we have prepared sample data for you.
+
+### Deploy to Netlify
+
+Once content is complete, So simply deploy site on Netlify.
+Your site will now be available to the world!
+
+When deploy on Netlify, Specify the published URL of Google Sheets you want to use as data.
+
+To deploy, just click the button below!
+If the text is not clear enough, a [YouTube video]() (TODO) of deployment procedure is also available.
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee">
   <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"></a>
 
-### Parameters required when deploying
+#### Sample site data
 
-- SHEET_URL (Specify the published URL of the Google spreadsheet you want to use as data.)
+If you want to use the sample site data, please specify the URL here.
 
-## Development Usage 🔦
+```
+TODO
+```
+
+## For developers
+
+The following is the documentation for Habanero Bee's developers.
+
+### Development Usage
 
 ```bash
 # Development
@@ -71,7 +110,7 @@ yarn lint .
 yarn allcheck
 ```
 
-## TIPS for development 🚀
+### TIPS for development
 
 When I develop locally, I set up my own commands like this to develop.
 
@@ -94,12 +133,22 @@ index b461d8a..a3625c1 100644
      "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
 ```
 
-### Note:
+#### Note:
 
 Be careful not to `push` it by mistake.
 Of course, there is nothing wrong with making that URL public (As long as you don't write any secure information on it.), and archiving the URL will disable it.
 
-## Habanero Bee uses the power of open source 🌋
+## Roadmap
+
+This project is work in progress to version to 0.1.0.
+I will update the version to 0.1.0 as soon as this task is completed.
+
+- [x] Create a logo for this project.
+- [x] Create a unit test for a util functions.
+- [ ] Create a simple document on deploying a site using Habanero Bee.
+- [ ] And some minor fixes...
+
+## Habanero Bee uses the power of open source
 
 ### Using HTML5 UP
 
@@ -115,6 +164,6 @@ LICENCE: [HTML5 UP LICENCE](https://html5up.net/license)
 
 LICENCE: [Next.js LICENCE](https://github.com/vercel/next.js/blob/canary/license.md)
 
-## Author 🖌
+## Author
 
 [Yuki Shindo](https://shinshin86.com)
