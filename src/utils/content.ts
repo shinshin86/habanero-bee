@@ -33,7 +33,16 @@ export const renderAmpHTML = async (markdownText: string): Promise<string> => {
   }
 
   const imgList = renderedHTML.match(/<img(.|\s)*?>/gi);
-  return !imgList ? renderedHTML : await convertAmpImg(renderedHTML);
+  const renderedAmpHTML = !imgList
+    ? renderedHTML
+    : await convertAmpImg(renderedHTML);
+
+  // Since it has already been converted from markdown to HTML, I am looking for <code>youtube:~</code>.
+  const youtubeLinkList = renderedAmpHTML.match(/<code>youtube:.*?<\/code>/gi);
+
+  return !youtubeLinkList
+    ? renderedAmpHTML
+    : await convertAmpYoutube(renderedAmpHTML);
 };
 
 export const getTextContent = (markdownText: string): string => {
@@ -60,4 +69,41 @@ export const convertAmpImg = async (html: string): Promise<string> => {
   );
 
   return ampImg;
+};
+
+const getAmpYoutubeTag = (youtubeLink: string): string => {
+  const url = new URL(youtubeLink);
+  if (url.origin === 'https://www.youtube.com') {
+    return `<amp-youtube width="480"
+height="270"
+layout="responsive"
+data-videoid="${url.searchParams.get('v')}">
+</amp-youtube>`;
+  } else if (url.origin === 'https://youtu.be') {
+    return `<amp-youtube width="480"
+height="270"
+layout="responsive"
+data-videoid="${url.pathname.slice(1)}">
+</amp-youtube>`;
+  } else {
+    throw new Error('Invalid YouTube URL found');
+  }
+};
+
+const convertAmpYoutube = async (html: string): Promise<string> => {
+  // Since it has already been converted from markdown to HTML, I am looking for <code>youtube:~</code>.
+  const convertedHTML = await replaceAsync(
+    html,
+    /<code>youtube:.*?<\/code>/gi,
+    async (match: string) => {
+      const youtubeUrl = match
+        .replace('<code>', '')
+        .replace('</code>', '')
+        .replace('youtube:', '');
+
+      return getAmpYoutubeTag(youtubeUrl);
+    }
+  );
+
+  return convertedHTML;
 };

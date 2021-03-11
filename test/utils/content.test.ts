@@ -29,14 +29,27 @@ describe('getDescriptionText', (): void => {
 describe('renderAmpHTML', (): void => {
   test('Should return converted AMP HTML from markdown.', async (): Promise<void> => {
     const mdText = `### test
-![No Image](./public/images/no-image.png)`;
+![No Image](./public/images/no-image.png)
+
+${'`youtube:https://www.youtube.com/watch?v=lBTCB7yLs8Y`'}
+
+${'`youtube:https://youtu.be/lBTCB7yLs8Y`'}
+`;
     const expectedHTML = `<h3>test</h3><p><amp-img
   alt="No Image"
   src="./public/images/no-image.png"
   width="515"
   height="515"
   layout="responsive"
-></amp-img></p>`;
+></amp-img></p><p><amp-youtube width="480"
+height="270"
+layout="responsive"
+data-videoid="lBTCB7yLs8Y">
+</amp-youtube></p><p><amp-youtube width="480"
+height="270"
+layout="responsive"
+data-videoid="lBTCB7yLs8Y">
+</amp-youtube></p>`;
 
     const html = await renderAmpHTML(mdText);
     expect(html).toBe(expectedHTML);
@@ -49,6 +62,34 @@ CC`;
     const expectedHTML = `<p>AA<br>BB<br>CC</p>`;
     const html = await renderAmpHTML(mdText);
     expect(html).toBe(expectedHTML);
+  });
+
+  test('Should throw error, if invalid URL.', async (): Promise<void> => {
+    const mdText = `### test
+![No Image](./public/images/no-image.png)
+
+${'`youtube:error-url`'}
+
+${'`youtube:https://youtu.be/lBTCB7yLs8Y`'}
+`;
+
+    await expect(renderAmpHTML(mdText)).rejects.toThrow(
+      'Invalid URL: error-url'
+    );
+  });
+
+  test('Should throw error, if invalid URL. (Pattern of Not YouTube URL)', async (): Promise<void> => {
+    const mdText = `### test
+![No Image](./public/images/no-image.png)
+
+${'`youtube:http://example.com`'}
+
+${'`youtube:https://youtu.be/lBTCB7yLs8Y`'}
+`;
+
+    await expect(renderAmpHTML(mdText)).rejects.toThrow(
+      'Invalid YouTube URL found'
+    );
   });
 });
 
