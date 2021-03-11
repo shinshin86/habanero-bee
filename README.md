@@ -14,6 +14,7 @@
     <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
   </a>
 </p>
+
 ## Table of Contents
 
 - [Abstract](#abstract)
