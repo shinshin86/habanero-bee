@@ -693,6 +693,18 @@ const Layout: React.FC<{
           display: flex;
           justify-content: space-between;
         }
+        /* pre */
+        pre {
+          background-color: #eee;
+          padding: 8px;
+          margin: 8px 0;
+          border-radius: 4px;
+        }
+        /* code */
+        code {
+          background-color: #eee;
+          padding: 4px;
+        }
       `}</style>
     </>
   );
