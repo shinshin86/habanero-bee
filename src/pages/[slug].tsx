@@ -144,17 +144,19 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
 
   const response = await fetch(SHEET_URL).then((r) => r.json());
   const { general, meta, content } = response;
-  const contentData = content.find((c: Content) => c.slug === params.slug);
+  const contentData = content.find(
+    (c: Content) => getSlugText(c.slug) === params.slug
+  );
 
   contentData.renderedHTML = await renderAmpHTML(contentData.text);
 
-  const slugList = content.map((c: Content) => c.slug);
+  const slugList = content.map((c: Content) => getSlugText(c.slug));
   const targetPageIndex = slugList.indexOf(params.slug);
   contentData.prevPageUrl =
-    targetPageIndex && `/${getSlugText(slugList[targetPageIndex - 1])}`;
+    targetPageIndex && `/${slugList[targetPageIndex - 1]}`;
   contentData.nextPageUrl =
     slugList.length > targetPageIndex + 1 &&
-    `/${getSlugText(slugList[targetPageIndex + 1])}`;
+    `/${slugList[targetPageIndex + 1]}`;
 
   if (!isValidData(general, meta, new Array(contentData))) {
     throw new Error('BUILD ERROR: Invalid sheet data');
