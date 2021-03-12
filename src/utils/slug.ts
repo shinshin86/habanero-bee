@@ -1,1 +1,1 @@
-export const getSlugText = (slug: string): string => slug.toLowerCase();
+export const getSlugText = (slug: string): string => slug.toLowerCase().trim();
