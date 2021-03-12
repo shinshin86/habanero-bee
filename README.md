@@ -61,7 +61,7 @@ First, you need to create content for Habanero Bee in Google Sheets.
 
 Please refer to this document for instructions on how to create it( [this page (habanero-bee-google-apps-script)](https://github.com/shinshin86/habanero-bee-google-apps-script) ).
 
-If you just want to see the Habanero Bee in action first, skip this step, as we have prepared sample data for you.
+If you just want to see the Habanero Bee in action first, skip this step, as we have prepared demo data for you.
 
 ### Deploy to Netlify
 
@@ -76,13 +76,29 @@ If the text is not clear enough, a [YouTube video]() (TODO) of deployment proced
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee">
   <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"></a>
 
-#### Sample site data
+#### Demo site data
 
-If you want to use the sample site data, please specify the URL here.
+If you want to use demo site data, please specify this URL.
 
 ```
-TODO
+https://script.google.com/macros/s/AKfycbzFMeY9SFDVuGj9n0t2UaS2NNcLws03xdQj1Gt-J_JSlPeqmhmupakjzU8nSbpcuFbJmw/exec
 ```
+
+#### Deploy to your PC using demo data
+
+If you don't want to use Netlify and want to see how it works on your PC, you can run the following command.
+
+```sh
+# Clone and Install
+git clone https://github.com/shinshin86/habanero-bee.git
+cd habanero-bee
+yarn install
+
+# Generate Habanero Bee demo site
+yarn clean && SHEET_URL=https://script.google.com/macros/s/AKfycbzFMeY9SFDVuGj9n0t2UaS2NNcLws03xdQj1Gt-J_JSlPeqmhmupakjzU8nSbpcuFbJmw/exec yarn deploy && yarn start
+```
+
+Let's open `http://localhost:3000` with browser!
 
 ## For developers
 
