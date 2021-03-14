@@ -71,6 +71,7 @@ Your site will now be available to the world!
 When deploy on Netlify, Specify the published URL of Google Sheets you want to use as data.
 
 To deploy, just click the button below!
+
 If the text is not clear enough, a [YouTube video](https://youtu.be/ykh_vVB3JLk) of deployment procedure is also available.
 
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee">
