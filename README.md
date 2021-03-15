@@ -25,7 +25,6 @@
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
-- [Roadmap](#roadmap)
 - [Habanero Bee uses the power of open source](#habanero-bee-uses-the-power-of-open-source)
   - [Using HTML5 UP](#using-html5-up)
   - [Using Next.js](#using-next.js)
@@ -154,16 +153,6 @@ index b461d8a..a3625c1 100644
 
 Be careful not to `push` it by mistake.
 Of course, there is nothing wrong with making that URL public (As long as you don't write any secure information on it.), and archiving the URL will disable it.
-
-## Roadmap
-
-This project is work in progress to version to 0.1.0.
-I will update the version to 0.1.0 as soon as this task is completed.
-
-- [x] Create a logo for this project.
-- [x] Create a unit test for a util functions.
-- [x] Create a simple document on deploying a site using Habanero Bee.
-- [x] And some minor fixes...
 
 ## Habanero Bee uses the power of open source
 
