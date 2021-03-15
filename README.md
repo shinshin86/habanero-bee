@@ -162,8 +162,8 @@ I will update the version to 0.1.0 as soon as this task is completed.
 
 - [x] Create a logo for this project.
 - [x] Create a unit test for a util functions.
-- [ ] Create a simple document on deploying a site using Habanero Bee.
-- [ ] And some minor fixes...
+- [x] Create a simple document on deploying a site using Habanero Bee.
+- [x] And some minor fixes...
 
 ## Habanero Bee uses the power of open source
 
