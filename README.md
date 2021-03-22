@@ -22,6 +22,7 @@
 - [Setup Habanero Bee Site](#setup-habanero-bee-site)
   - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
   - [Deploy to Netlify](#deploy-to-netlify)
+  - [Advanced: How to manage Habanero Bee in a private repository](#advanced-how-to-manage-habanero-bee-in-a-private-repository)
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
