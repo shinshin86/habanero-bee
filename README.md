@@ -103,8 +103,8 @@ Let's open `http://localhost:3000` with browser!
 
 ### Advanced: How to manage Habanero Bee in a private repository
 
-If you use `Deploy to Netlify` button, it will be copied to your GitHub account as a public repository.
-So, if you want to run it as a private repository, you need to clone this repository using the `git clone` command.
+If you use `Deploy to Netlify` button, it will be copied to your GitHub account as a public repository.  
+So, if you want to run it as a private repository, you need to clone this repository using the `git clone` command.  
 The command for this is written below.
 
 ```sh
