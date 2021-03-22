@@ -100,6 +100,31 @@ yarn clean && SHEET_URL=https://script.google.com/macros/s/AKfycbzFMeY9SFDVuGj9n
 
 Let's open `http://localhost:3000` with browser!
 
+### Advanced: How to manage Habanero Bee in a private repository
+
+If you use `Deploy to Netlify` button, it will be copied to your GitHub account as a public repository.
+So, if you want to run it as a private repository, you need to clone this repository using the `git clone` command.
+The command for this is written below.
+
+```sh
+# clone and remove git
+git clone https://github.com/shinshin86/habanero-bee.git your-project
+cd your-project
+rm -rf .git
+
+# initialize
+git init
+git add .
+git commit
+```
+
+Create a private repository on your GitHub and push this project to it.
+
+If you are deploying to Netlify, you will need to log in to your Netlify dashboard and manually configure your site.
+(Even though it is manual, it is very easy!)
+
+Make sure to set an environment variable called SHEET_URL when deploying and set the Google Sheets public URL there.
+
 ## For developers
 
 The following is the documentation for Habanero Bee's developers.
