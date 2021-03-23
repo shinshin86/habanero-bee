@@ -11,6 +11,7 @@ import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import { getSlugText } from '@/utils/slug';
+import { fetchImage } from '@/utils/image';
 
 export const config = {
   amp: true,
@@ -138,6 +139,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
 
   if (!isValidData(general, meta, contentList)) {
     throw new Error('BUILD ERROR: Invalid sheet data');
+  }
+
+  for (const c of contentList) {
+    c.fetchedImagePath = await fetchImage(c.imagePath);
   }
 
   return {
