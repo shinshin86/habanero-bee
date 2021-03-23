@@ -2,7 +2,7 @@
 const fs = require('fs').promises;
 /* eslint-enable @typescript-eslint/no-var-requires */
 
-export const fetchImage = async (imgTag: string): Promise<string> => {
+export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
   const url = imgTag.match(/src=["|'](.*?)["|']/)
     ? // @ts-ignore
       imgTag.match(/src=["|'](.*?)["|']/)[1]
