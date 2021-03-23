@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs').promises;
+const crypto = require('crypto');
+const path = require('path');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
@@ -12,30 +14,24 @@ export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
     throw new Error('Error: URL of image is not set in img tag');
   }
 
-  const imageUrl = new URL(url);
-  const splitedUrl = imageUrl.pathname.split('/');
-  const filename = splitedUrl[splitedUrl.length - 1];
-  const imagePath = `/images/${filename}`;
-
   const response = await fetch(url);
 
   // @ts-ignore
   const buffer = await response.buffer();
+  const hashedImageName = getHashImageName(url);
+  const imagePath = `/images/${hashedImageName}`;
   await fs.writeFile(`./public${imagePath}`, buffer);
 
   return imagePath;
 };
 
 export const fetchImage = async (url: string): Promise<string> => {
-  const imageUrl = new URL(url);
-  const splitedUrl = imageUrl.pathname.split('/');
-  const filename = splitedUrl[splitedUrl.length - 1];
-  const imagePath = `/images/${filename}`;
-
   const response = await fetch(url);
 
   // @ts-ignore
   const buffer = await response.buffer();
+  const hashedImageName = getHashImageName(url);
+  const imagePath = `/images/${hashedImageName}`;
   await fs.writeFile(`./public${imagePath}`, buffer);
 
   return imagePath;
@@ -52,4 +48,9 @@ export const isExternalImage = (imgTag: string): boolean => {
   }
 
   return url.indexOf('http') === 0;
+};
+
+const getHashImageName = (name: string): string => {
+  const ext = path.extname(name);
+  return `${crypto.createHash('md4').update(name).digest('hex')}${ext}`;
 };
