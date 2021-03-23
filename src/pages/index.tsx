@@ -9,6 +9,7 @@ import { isValidData } from '@/utils/validate';
 import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
+import { getDownloadedImagePath } from '@/utils/image';
 
 export const config = {
   amp: true,
@@ -95,6 +96,10 @@ export const getStaticProps: GetStaticProps = async () => {
 
   if (!isValidData(general, meta, content)) {
     throw new Error('BUILD ERROR: Invalid sheet data');
+  }
+
+  for (const c of content) {
+    c.downloadedImagePath = await getDownloadedImagePath(c.imagePath);
   }
 
   return {
