@@ -4,43 +4,31 @@ const crypto = require('crypto');
 const path = require('path');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
+const imgTagRegex = /src=["|'](.*?)["|']/;
+
 export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
-  const url = imgTag.match(/src=["|'](.*?)["|']/)
+  const url = imgTag.match(imgTagRegex)
     ? // @ts-ignore
-      imgTag.match(/src=["|'](.*?)["|']/)[1]
+      imgTag.match(imgTagRegex)[1]
     : '';
 
   if (!url) {
     throw new Error('Error: URL of image is not set in img tag');
   }
 
-  const response = await fetch(url);
-
-  // @ts-ignore
-  const buffer = await response.buffer();
-  const hashedImageName = getHashImageName(url);
-  const imagePath = `/images/${hashedImageName}`;
-  await fs.writeFile(`./public${imagePath}`, buffer);
-
+  const imagePath = await downloadImage(url);
   return imagePath;
 };
 
 export const fetchImage = async (url: string): Promise<string> => {
-  const response = await fetch(url);
-
-  // @ts-ignore
-  const buffer = await response.buffer();
-  const hashedImageName = getHashImageName(url);
-  const imagePath = `/images/${hashedImageName}`;
-  await fs.writeFile(`./public${imagePath}`, buffer);
-
+  const imagePath = await downloadImage(url);
   return imagePath;
 };
 
 export const isExternalImage = (imgTag: string): boolean => {
-  const url = imgTag.match(/src=["|'](.*?)["|']/)
+  const url = imgTag.match(imgTagRegex)
     ? // @ts-ignore
-      imgTag.match(/src=["|'](.*?)["|']/)[1]
+      imgTag.match(imgTagRegex)[1]
     : '';
 
   if (!url) {
@@ -48,6 +36,20 @@ export const isExternalImage = (imgTag: string): boolean => {
   }
 
   return url.indexOf('http') === 0;
+};
+
+const downloadImage = async (url: string): Promise<string> => {
+  const response = await fetch(url);
+
+  // @ts-ignore
+  const buffer = await response.buffer();
+  const hashedImageName = getHashImageName(url);
+  const imagePath = `/images/${hashedImageName}`;
+
+  // save image
+  await fs.writeFile(`./public${imagePath}`, buffer);
+
+  return imagePath;
 };
 
 const getHashImageName = (name: string): string => {
