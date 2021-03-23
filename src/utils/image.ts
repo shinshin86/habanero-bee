@@ -25,3 +25,14 @@ export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
 
   return imagePath;
 };
+
+export const isExternalImage = (imgTag: string): boolean => {
+  const url = imgTag.match(/src=["|'](.*?)["|']/)
+    ? // @ts-ignore
+      imgTag.match(/src=["|'](.*?)["|']/)[1]
+    : '';
+
+  if (!url) return false;
+
+  return url.indexOf('http') === 0;
+};
