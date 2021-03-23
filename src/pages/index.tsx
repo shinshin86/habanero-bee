@@ -9,7 +9,7 @@ import { isValidData } from '@/utils/validate';
 import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
-import { fetchImage } from '@/utils/image';
+import { getDownloadedImagePath } from '@/utils/image';
 
 export const config = {
   amp: true,
@@ -99,7 +99,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   for (const c of content) {
-    c.fetchedImagePath = await fetchImage(c.imagePath);
+    c.downloadedImagePath = await getDownloadedImagePath(c.imagePath);
   }
 
   return {

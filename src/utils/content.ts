@@ -1,5 +1,5 @@
 import markdownIt from 'markdown-it';
-import { fetchHTMLImg, isExternalImage } from '@/utils/image';
+import { getDownloadedHTMLImagePath, isExternalImage } from '@/utils/image';
 const mi = markdownIt({ breaks: true, html: true });
 /* eslint-disable @typescript-eslint/no-var-requires */
 const img2AmpImg = require('img2amp-img');
@@ -65,7 +65,7 @@ export const convertAmpImg = async (html: string): Promise<string> => {
     /<img(.|\s)*?>/gi,
     async (match: string) => {
       if (isExternalImage(match)) {
-        const imagePath = await fetchHTMLImg(match);
+        const imagePath = await getDownloadedHTMLImagePath(match);
 
         const ampImg = await img2AmpImg(
           match.replace(/src=["|'](.*?)["|']/, `src="./public${imagePath}"`)

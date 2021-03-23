@@ -6,7 +6,9 @@ const path = require('path');
 
 const imgTagRegex = /src=["|'](.*?)["|']/;
 
-export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
+export const getDownloadedHTMLImagePath = async (
+  imgTag: string
+): Promise<string> => {
   const url = imgTag.match(imgTagRegex)
     ? // @ts-ignore
       imgTag.match(imgTagRegex)[1]
@@ -20,7 +22,7 @@ export const fetchHTMLImg = async (imgTag: string): Promise<string> => {
   return imagePath;
 };
 
-export const fetchImage = async (url: string): Promise<string> => {
+export const getDownloadedImagePath = async (url: string): Promise<string> => {
   const imagePath = await downloadImage(url);
   return imagePath;
 };
