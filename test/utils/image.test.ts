@@ -12,4 +12,10 @@ describe('isExternalImage', (): void => {
       isExternalImage('<img src="/images/no-image.png" alt="test" />')
     ).toBeFalsy();
   });
+
+  test('Should throw error if URL of image is not set in img tag.', (): void => {
+    expect(() => isExternalImage('<img src="" alt="test" />')).toThrow(
+      'Error: URL of image is not set in img tag'
+    );
+  });
 });

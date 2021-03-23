@@ -47,7 +47,9 @@ export const isExternalImage = (imgTag: string): boolean => {
       imgTag.match(/src=["|'](.*?)["|']/)[1]
     : '';
 
-  if (!url) return false;
+  if (!url) {
+    throw new Error('Error: URL of image is not set in img tag');
+  }
 
   return url.indexOf('http') === 0;
 };
