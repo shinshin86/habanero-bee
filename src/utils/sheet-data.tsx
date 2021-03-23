@@ -26,6 +26,7 @@ export interface Content {
   slug: string;
   description?: string;
   imagePath?: string;
+  fetchedImagePath?: string;
   imageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;

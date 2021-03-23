@@ -13,6 +13,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import PrevNextLinks from '@/components/PrevNextLinks';
 import { getSlugText } from '@/utils/slug';
+import { fetchImage } from '@/utils/image';
 
 export const config = {
   amp: true,
@@ -35,7 +36,7 @@ const DetailPage: React.FC<{
     title,
     description,
     text,
-    imagePath,
+    fetchedImagePath,
     imageAltText,
     tags,
     renderedHTML,
@@ -58,7 +59,7 @@ const DetailPage: React.FC<{
         siteUrl={`${meta.siteUrl}/${contentData.slug}`}
         title={`${title} | ${meta.title}`}
         description={description || getMetaDescriptionText(text)}
-        ogpImage={imagePath || meta.ogpImage}
+        ogpImage={fetchedImagePath || meta.ogpImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
@@ -87,7 +88,7 @@ const DetailPage: React.FC<{
             {!!tagList.length && <TagLinks tags={tagList} />}
             <span className="avatar">
               <amp-img
-                src={imagePath || '/images/no-image.png'}
+                src={fetchedImagePath || '/images/no-image.png'}
                 alt={imageAltText || 'No Image'}
                 width="250"
                 height="250"
@@ -149,6 +150,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   );
 
   contentData.renderedHTML = await renderAmpHTML(contentData.text);
+
+  contentData.fetchedImagePath = await fetchImage(contentData.imagePath);
 
   const slugList = content.map((c: Content) => getSlugText(c.slug));
   const targetPageIndex = slugList.indexOf(params.slug);
