@@ -14,7 +14,7 @@ export interface Meta {
   title: string;
   description: string;
   ogpImage: string;
-  avatarImage: string;
+  avatarImage?: string;
   keywords?: string;
   googleAnalyticsTrackingId?: string;
   googleSiteVerificationCode?: string;
