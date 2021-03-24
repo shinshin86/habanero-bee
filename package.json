@@ -1,6 +1,6 @@
 {
   "name": "habanero-bee",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Habanero Bee is a simple AMP-compliant CMS system that makes it easy to create content using Google Sheets.",
   "scripts": {
     "dev": "next",
@@ -10,6 +10,7 @@
     "clean": "rm -rf out/",
     "format": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
+    "format-check": "prettier --check **/*.{js,json,md} src/**/*.{ts,tsx}",
     "sitemap": "node scripts/gen-sitemap.js",
     "favicon": "node scripts/gen-favicon.js",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
