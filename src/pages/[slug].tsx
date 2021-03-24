@@ -89,7 +89,7 @@ const DetailPage: React.FC<{
           <header>
             {!!tagList.length && <TagLinks tags={tagList} />}
             <AvatarImage
-              imageUrl={downloadedImagePath}
+              imageUrl={downloadedImagePath || '/images/no-image.png'}
               altText={imageAltText}
             />
             <h2>{title}</h2>
@@ -149,9 +149,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
 
   contentData.renderedHTML = await renderAmpHTML(contentData.text);
 
-  contentData.downloadedImagePath = await getDownloadedImagePath(
-    contentData.imagePath
-  );
+  contentData.downloadedImagePath =
+    contentData.imagePath &&
+    (await getDownloadedImagePath(contentData.imagePath));
 
   const slugList = content.map((c: Content) => getSlugText(c.slug));
   const targetPageIndex = slugList.indexOf(params.slug);

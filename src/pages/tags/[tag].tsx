@@ -151,7 +151,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
     general.logoImage && (await getDownloadedImagePath(general.logoImage));
 
   for (const c of contentList) {
-    c.downloadedImagePath = await getDownloadedImagePath(c.imagePath);
+    c.downloadedImagePath =
+      c.imagePath && (await getDownloadedImagePath(c.imagePath));
   }
 
   return {
