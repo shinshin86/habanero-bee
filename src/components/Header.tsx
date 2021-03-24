@@ -7,12 +7,14 @@ const Header: React.FC<Meta> = ({
   title,
   keywords,
   ogpImage,
+  avatarImage,
   description,
   googleSiteVerificationCode,
   noindex,
 }): JSX.Element => (
   <Head>
     <meta charSet="utf-8" />
+    <link rel="canonical" href={siteUrl} />
     {noindex && <meta name="robots" content="noindex" />}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     {/* primary meta tags */}
@@ -35,6 +37,7 @@ const Header: React.FC<Meta> = ({
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogpImage} />
 
+    <link rel="preload" as="image" href={avatarImage} />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -47,6 +47,7 @@ const IndexPage: React.FC<{
         title={meta.title}
         description={meta.description}
         ogpImage={meta.ogpImage}
+        avatarImage={logoImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
@@ -69,9 +70,11 @@ const IndexPage: React.FC<{
             <h1>{title}</h1>
             <p>{description}</p>
           </header>
-          {content.map((data, index) => (
-            <LinkCard {...data} key={index} />
-          ))}
+          <ul>
+            {content.map((data, index) => (
+              <LinkCard {...data} key={index} />
+            ))}
+          </ul>
           <hr />
           {externalLinkUrl && (
             <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
