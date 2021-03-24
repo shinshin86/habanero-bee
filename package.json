@@ -10,6 +10,7 @@
     "clean": "rm -rf out/",
     "format": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
     "fmt": "prettier --write **/*.{js,json,md} src/**/*.{ts,tsx}",
+    "format-check": "prettier --check **/*.{js,json,md} src/**/*.{ts,tsx}",
     "sitemap": "node scripts/gen-sitemap.js",
     "favicon": "node scripts/gen-favicon.js",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
