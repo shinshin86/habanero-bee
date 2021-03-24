@@ -47,6 +47,7 @@ const IndexPage: React.FC<{
         title={meta.title}
         description={meta.description}
         ogpImage={meta.ogpImage}
+        avatarImage={logoImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
