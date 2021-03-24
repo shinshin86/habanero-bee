@@ -2,6 +2,7 @@ export interface General {
   title: string;
   description: string;
   logoImage?: string;
+  downloadedImagePath?: string;
   logoImageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;

@@ -26,6 +26,7 @@ const TagPage: React.FC<{
   const {
     title,
     logoImage,
+    downloadedImagePath,
     logoImageAltText,
     externalLinkUrl,
     externalLinkText,
@@ -39,6 +40,8 @@ const TagPage: React.FC<{
     noindex,
   } = meta;
 
+  const avatarImage = downloadedImagePath || logoImage;
+
   return (
     <Layout
       backgroundColorCode={backgroundColor}
@@ -49,7 +52,7 @@ const TagPage: React.FC<{
         title={meta.title}
         description={meta.description}
         ogpImage={meta.ogpImage}
-        avatarImage={logoImage}
+        avatarImage={avatarImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
@@ -69,7 +72,7 @@ const TagPage: React.FC<{
         <section id="main">
           <header>
             <a href="/">
-              <AvatarImage imageUrl={logoImage} altText={logoImageAltText} />
+              <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
             </a>
             <a href="/">
               <h1>{title}</h1>
@@ -143,6 +146,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   if (!isValidData(general, meta, contentList)) {
     throw new Error('BUILD ERROR: Invalid sheet data');
   }
+
+  general.downloadedImagePath =
+    general.logoImage && (await getDownloadedImagePath(general.logoImage));
 
   for (const c of contentList) {
     c.downloadedImagePath = await getDownloadedImagePath(c.imagePath);
