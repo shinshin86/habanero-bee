@@ -9,7 +9,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -34,7 +33,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -59,7 +57,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: '',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -84,7 +81,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -109,7 +105,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -134,7 +129,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -159,7 +153,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {
@@ -186,7 +179,6 @@ describe('isValidData', (): void => {
       title: 'test',
       description: 'test',
       ogpImage: 'test',
-      avatarImage: 'test',
     };
     const contentList: Array<Content> = [
       {

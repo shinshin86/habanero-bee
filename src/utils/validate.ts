@@ -6,8 +6,8 @@ const isValidGeneralData = (obj: General): boolean => {
 };
 
 const isValidMetaData = (obj: Meta): boolean => {
-  const { siteUrl, title, description, ogpImage, avatarImage } = obj;
-  return !!(siteUrl && title && description && ogpImage && avatarImage);
+  const { siteUrl, title, description, ogpImage } = obj;
+  return !!(siteUrl && title && description && ogpImage);
 };
 
 const isValidContentData = (contentList: Array<Content>): boolean => {
