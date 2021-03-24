@@ -60,6 +60,7 @@ const DetailPage: React.FC<{
         title={`${title} | ${meta.title}`}
         description={description || getMetaDescriptionText(text)}
         ogpImage={downloadedImagePath || meta.ogpImage}
+        avatarImage={downloadedImagePath || '/images/no-image.png'}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />

@@ -49,6 +49,7 @@ const TagPage: React.FC<{
         title={meta.title}
         description={meta.description}
         ogpImage={meta.ogpImage}
+        avatarImage={logoImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
@@ -75,9 +76,11 @@ const TagPage: React.FC<{
             </a>
             <p>Tag - {tag}</p>
           </header>
-          {content.map((data, index) => (
-            <LinkCard {...data} key={index} />
-          ))}
+          <ul>
+            {content.map((data, index) => (
+              <LinkCard {...data} key={index} />
+            ))}
+          </ul>
           <hr />
           {externalLinkUrl && (
             <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
