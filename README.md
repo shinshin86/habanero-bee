@@ -10,8 +10,17 @@
   <a href="https://github.com/shinshin86/habanero-bee/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Habanero Bee is released under the MIT license." />
   </a>
-  <a href="https://travis-ci.org/shinshin86/habanero-bee">
-    <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/format.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/format.yml/badge.svg" alt="Format Check">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/lint.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/lint.yml/badge.svg" alt="Lint">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/test.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/test.yml/badge.svg" alt="Test">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/type-check.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/type-check.yml/badge.svg" alt="Test">
   </a>
 </p>
 
