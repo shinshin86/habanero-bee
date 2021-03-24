@@ -24,6 +24,7 @@ const IndexPage: React.FC<{
     title,
     description,
     logoImage,
+    downloadedImagePath,
     logoImageAltText,
     externalLinkUrl,
     externalLinkText,
@@ -37,6 +38,8 @@ const IndexPage: React.FC<{
     noindex,
   } = meta;
 
+  const avatarImage = downloadedImagePath || logoImage;
+
   return (
     <Layout
       backgroundColorCode={backgroundColor}
@@ -47,7 +50,7 @@ const IndexPage: React.FC<{
         title={meta.title}
         description={meta.description}
         ogpImage={meta.ogpImage}
-        avatarImage={logoImage}
+        avatarImage={avatarImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
       />
@@ -66,7 +69,7 @@ const IndexPage: React.FC<{
         {/* Main */}
         <section id="main">
           <header>
-            <AvatarImage imageUrl={logoImage} altText={logoImageAltText} />
+            <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
             <h1>{title}</h1>
             <p>{description}</p>
           </header>
@@ -101,8 +104,12 @@ export const getStaticProps: GetStaticProps = async () => {
     throw new Error('BUILD ERROR: Invalid sheet data');
   }
 
+  general.downloadedImagePath =
+    general.logoImage && (await getDownloadedImagePath(general.logoImage));
+
   for (const c of content) {
-    c.downloadedImagePath = await getDownloadedImagePath(c.imagePath);
+    c.downloadedImagePath =
+      c.imagePath && (await getDownloadedImagePath(c.imagePath));
   }
 
   return {
