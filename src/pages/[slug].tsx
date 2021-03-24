@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageTopButton from '@/components/PageTopButton';
 import TagLinks from '@/components/TagLinks';
+import AvatarImage from '@/components/AvatarImage';
 import { isValidData } from '@/utils/validate';
 import { getTagList } from '@/utils/tags';
 import { renderAmpHTML, getMetaDescriptionText } from '@/utils/content';
@@ -87,14 +88,10 @@ const DetailPage: React.FC<{
 
           <header>
             {!!tagList.length && <TagLinks tags={tagList} />}
-            <span className="avatar">
-              <amp-img
-                src={downloadedImagePath || '/images/no-image.png'}
-                alt={imageAltText || 'No Image'}
-                width="250"
-                height="250"
-              />
-            </span>
+            <AvatarImage
+              imageUrl={downloadedImagePath}
+              altText={imageAltText}
+            />
             <h2>{title}</h2>
             {publishedDate && (
               <p>{dayjs(publishedDate).format(dateFormat || 'YYYY/MM/DD')}</p>
