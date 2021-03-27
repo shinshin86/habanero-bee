@@ -189,6 +189,11 @@ index b461d8a..a3625c1 100644
 Be careful not to `push` it by mistake.
 Of course, there is nothing wrong with making that URL public (As long as you don't write any secure information on it.), and archiving the URL will disable it.
 
+## Related Projects
+
+- [Habanero Bee Google Apps Script](https://github.com/shinshin86/habanero-bee-google-apps-script)
+- [Habanero Bee shell script of update to latest](https://github.com/shinshin86/habanero-bee-shell-script-of-update-to-latest)
+
 ## Habanero Bee uses the power of open source
 
 ### Using HTML5 UP
