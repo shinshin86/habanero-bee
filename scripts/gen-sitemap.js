@@ -41,6 +41,7 @@ const getSlugText = (slug) => slug.toLowerCase();
   );
 
   const tags = urlList.concat(uniqueTagUrlList);
+  tags.push(siteUrl);
   tags.push(`${siteUrl}/tags`);
 
   const sitemap = generateSitemap(tags);
