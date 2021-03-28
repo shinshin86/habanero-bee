@@ -40,7 +40,11 @@ const getSlugText = (slug) => slug.toLowerCase();
     (t) => `${siteUrl}/tags/${getSlugText(t)}`
   );
 
-  const sitemap = generateSitemap(urlList.concat(uniqueTagUrlList));
+  const tags = urlList.concat(uniqueTagUrlList);
+  tags.push(siteUrl);
+  tags.push(`${siteUrl}/tags`);
+
+  const sitemap = generateSitemap(tags);
   await fs.writeFile('public/sitemap.xml', sitemap);
 
   console.log('Generate sitemap: SUCCESS');
