@@ -35,6 +35,7 @@
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
+- [Related Projects](#related-projects)
 - [Habanero Bee uses the power of open source](#habanero-bee-uses-the-power-of-open-source)
   - [Using HTML5 UP](#using-html5-up)
   - [Using Next.js](#using-next.js)
