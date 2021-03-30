@@ -1,3 +1,6 @@
+[template]
+  branch = "main"
+
 [template.environment]
   SHEET_URL = "Specify the published URL of the Google Sheets you want to use as data."
 
