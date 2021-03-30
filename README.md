@@ -136,6 +136,17 @@ If you are deploying to Netlify, you will need to log in to your Netlify dashboa
 
 Make sure to set an environment variable called `SHEET_URL` when deploying and set the Google Sheets public URL there.
 
+### Advanced: If you want to try out the latest features (Canary)
+
+If you want to try out the latest features of Habanero Bee, you can also use the Canary version.
+Change `netlify.toml` to the following and `push` it.
+
+**Note that the Canary version may behave in unexpected ways.**
+
+```sh
+# TODO
+```
+
 ## For developers
 
 The following is the documentation for Habanero Bee's developers.
