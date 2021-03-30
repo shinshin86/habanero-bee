@@ -661,6 +661,16 @@ const Layout: React.FC<{
           margin: 16px;
         }
 
+        ul.content-list {
+          list-style: revert;
+          text-align: left;
+        }
+
+        ul.content-list > li {
+          margin: 8px 8px 8px 24px;
+          word-wrap: break-word;
+        }
+
         /* scrollToTopButton */
         .scrollToTop {
           color: #fff;
