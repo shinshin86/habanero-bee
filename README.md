@@ -84,7 +84,7 @@ To deploy, just click the button below!
 
 If the text is not clear enough, a [YouTube video](https://youtu.be/ykh_vVB3JLk) of deployment procedure is also available.
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee/tree/main">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee">
   <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"></a>
 
 #### Demo site data
@@ -135,14 +135,6 @@ If you are deploying to Netlify, you will need to log in to your Netlify dashboa
 (Even though it is manual, it is very easy!)
 
 Make sure to set an environment variable called `SHEET_URL` when deploying and set the Google Sheets public URL there.
-
-### Advanced: If you want to try out the latest features (Canary)
-
-You can deploy site using Canary version by clicking `Deploy to Netlify` button here.
-Please note that this version may contain unexpected behavior or bugs.
-
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/shinshin86/habanero-bee/tree/canary">
-  <img src="https://www.netlify.com/img/deploy/button.svg" title="Deploy to Netlify"></a>
 
 ## For developers
 
