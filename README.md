@@ -32,6 +32,7 @@
   - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
   - [Deploy to Netlify](#deploy-to-netlify)
   - [Advanced: How to manage Habanero Bee in a private repository](#advanced-how-to-manage-habanero-bee-in-a-private-repository)
+  - [Advanced: If you want to try out the latest features (Canary)](#advanced-if-you-want-to-try-out-the-latest-features-canary)
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
@@ -135,6 +136,26 @@ If you are deploying to Netlify, you will need to log in to your Netlify dashboa
 (Even though it is manual, it is very easy!)
 
 Make sure to set an environment variable called `SHEET_URL` when deploying and set the Google Sheets public URL there.
+
+### Advanced: If you want to try out the latest features (Canary)
+
+If you want to try out the latest features of Habanero Bee, you can also use the Canary version.
+Change `netlify.toml` to the following and `push` it.
+
+**Note that the Canary version may behave in unexpected ways.**
+
+```diff
+diff --git a/netlify.toml b/netlify.toml
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -1,5 +1,5 @@
+ [template]
+-  branch = "main"
++  branch = "canary"
+
+ [template.environment]
+   SHEET_URL = "Specify the published URL of the Google Sheets you want to use as data."
+```
 
 ## For developers
 
