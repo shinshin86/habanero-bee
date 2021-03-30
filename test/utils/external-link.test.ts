@@ -29,13 +29,17 @@ describe('getExternalLinks', (): void => {
     const url = 'https://example.com, https://example.net';
     const text = 'example1';
 
-    expect(() => getExternalLinks(url, text)).toThrow();
+    expect(() => getExternalLinks(url, text)).toThrow(
+      'Number of  URL and the texts is different.'
+    );
   });
 
   test('Should throw error, if empty url or text is entered.', (): void => {
     const url = '';
     const text = 'example1';
 
-    expect(() => getExternalLinks(url, text)).toThrow();
+    expect(() => getExternalLinks(url, text)).toThrow(
+      'An empty URL or text is entered.'
+    );
   });
 });

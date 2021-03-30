@@ -2,6 +2,7 @@ export interface General {
   title: string;
   description: string;
   logoImage?: string;
+  downloadedImagePath?: string;
   logoImageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;
@@ -14,6 +15,7 @@ export interface Meta {
   title: string;
   description: string;
   ogpImage: string;
+  avatarImage?: string;
   keywords?: string;
   googleAnalyticsTrackingId?: string;
   googleSiteVerificationCode?: string;
@@ -26,6 +28,7 @@ export interface Content {
   slug: string;
   description?: string;
   imagePath?: string;
+  downloadedImagePath?: string;
   imageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;

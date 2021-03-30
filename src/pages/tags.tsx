@@ -2,27 +2,25 @@ import Layout from '@/components/Layout';
 import Analytics from '@/components/Analytics';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LinkCard from '@/components/LinkCard';
 import PageTopButton from '@/components/PageTopButton';
 import AvatarImage from '@/components/AvatarImage';
-import { getTagList } from '@/utils/tags';
 import { isValidData } from '@/utils/validate';
-import { General, Meta, Content } from '@/utils/sheet-data';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { General, Meta } from '@/utils/sheet-data';
+import { GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
-import { getSlugText } from '@/utils/slug';
 import { getDownloadedImagePath } from '@/utils/image';
+import { getTagList } from '@/utils/tags';
+import { getSlugText } from '@/utils/slug';
 
 export const config = {
   amp: true,
 };
 
-const TagPage: React.FC<{
+const IndexPage: React.FC<{
   general: General;
-  content: Array<Content>;
   meta: Meta;
-  tag: string;
-}> = ({ general, content, meta, tag }): JSX.Element => {
+  tags: Array<string>;
+}> = ({ general, meta, tags }): JSX.Element => {
   const {
     title,
     logoImage,
@@ -48,9 +46,9 @@ const TagPage: React.FC<{
       pageTopButtonColorCode={pageTopButtonColor}
     >
       <Header
-        siteUrl={meta.siteUrl}
-        title={meta.title}
-        description={meta.description}
+        siteUrl={`${meta.siteUrl}/tags`}
+        title={`Tags | ${meta.title}`}
+        description={`Tags | ${meta.title}`}
         ogpImage={meta.ogpImage}
         avatarImage={avatarImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
@@ -71,19 +69,26 @@ const TagPage: React.FC<{
         {/* Main */}
         <section id="main">
           <header>
-            <a href="/">
-              <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
-            </a>
-            <a href="/">
-              <h1>{title}</h1>
-            </a>
-            <p>Tag - {tag}</p>
+            <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
+            <h1>{title}</h1>
+            <p>Tags</p>
           </header>
-          <ul>
-            {content.map((data, index) => (
-              <LinkCard {...data} key={index} />
-            ))}
-          </ul>
+          {tags.length ? (
+            <ul className="tag-link-list-container">
+              {tags.map((tag, index) => (
+                <li key={index} className="tag-list">
+                  <a
+                    href={`/tags/${getSlugText(tag)}`}
+                    className="external-link-button"
+                  >
+                    {tag}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>This site has not been tagged with any posts.</p>
+          )}
           <hr />
           {externalLinkUrl && (
             <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
@@ -96,40 +101,7 @@ const TagPage: React.FC<{
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  if (!process.env.SHEET_URL) {
-    throw new Error('BUILD ERROR: Setting the SHEET_URL is required.');
-  }
-
-  const { SHEET_URL } = process.env;
-
-  const response = await fetch(SHEET_URL).then((r) => r.json());
-
-  const tagList = [];
-  for (const c of response.content) {
-    const tList = getTagList(c.tags);
-    if (!tList.length) {
-      continue;
-    }
-
-    tagList.push(...tList);
-  }
-
-  const uniqueTagList = tagList.filter(
-    (tag, index, self) => self.indexOf(tag) === index
-  );
-  const paths = uniqueTagList.map((t) => `/tags/${getSlugText(t)}`);
-
-  return { paths, fallback: false };
-};
-
-type Params = {
-  params: {
-    tag: string;
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
+export const getStaticProps: GetStaticProps = async () => {
   if (!process.env.SHEET_URL) {
     throw new Error('BUILD ERROR: Setting the SHEET_URL is required.');
   }
@@ -139,30 +111,32 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const response = await fetch(SHEET_URL).then((r) => r.json());
   const { general, meta, content } = response;
 
-  const contentList = content.filter((c: Content) => {
-    return getTagList(getSlugText(c.tags)).includes(params.tag);
-  });
-
-  if (!isValidData(general, meta, contentList)) {
+  if (!isValidData(general, meta, content)) {
     throw new Error('BUILD ERROR: Invalid sheet data');
   }
 
   general.downloadedImagePath =
     general.logoImage && (await getDownloadedImagePath(general.logoImage));
 
-  for (const c of contentList) {
-    c.downloadedImagePath =
-      c.imagePath && (await getDownloadedImagePath(c.imagePath));
+  const tags: Array<string> = [];
+
+  for (const c of content) {
+    if (!c.tags) continue;
+
+    for (const tag of getTagList(c.tags)) {
+      if (!tags.includes(tag)) {
+        tags.push(tag);
+      }
+    }
   }
 
   return {
     props: {
       general,
       meta,
-      content: contentList,
-      tag: params.tag,
+      tags,
     },
   };
 };
 
-export default TagPage;
+export default IndexPage;

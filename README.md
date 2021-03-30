@@ -10,8 +10,17 @@
   <a href="https://github.com/shinshin86/habanero-bee/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/shinshin86/habanero-bee?color=blue" alt="Habanero Bee is released under the MIT license." />
   </a>
-  <a href="https://travis-ci.org/shinshin86/habanero-bee">
-    <img src="https://travis-ci.org/shinshin86/habanero-bee.svg?branch=main" alt="Current Travis CI build status." />
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/format.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/format.yml/badge.svg" alt="Format Check">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/lint.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/lint.yml/badge.svg" alt="Lint">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/test.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/test.yml/badge.svg" alt="Test">
+  </a>
+  <a href ="https://github.com/shinshin86/habanero-bee/actions/workflows/type-check.yml">
+    <img src="https://github.com/shinshin86/habanero-bee/actions/workflows/type-check.yml/badge.svg" alt="Test">
   </a>
 </p>
 
@@ -26,6 +35,7 @@
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
+- [Related Projects](#related-projects)
 - [Habanero Bee uses the power of open source](#habanero-bee-uses-the-power-of-open-source)
   - [Using HTML5 UP](#using-html5-up)
   - [Using Next.js](#using-next.js)
@@ -187,6 +197,11 @@ index b461d8a..a3625c1 100644
 
 Be careful not to `push` it by mistake.
 Of course, there is nothing wrong with making that URL public (As long as you don't write any secure information on it.), and archiving the URL will disable it.
+
+## Related Projects
+
+- [Habanero Bee Google Apps Script](https://github.com/shinshin86/habanero-bee-google-apps-script)
+- [Habanero Bee shell script of update to latest](https://github.com/shinshin86/habanero-bee-shell-script-of-update-to-latest)
 
 ## Habanero Bee uses the power of open source
 

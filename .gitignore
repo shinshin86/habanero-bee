@@ -9,3 +9,5 @@ public/browserconfig.xml
 public/favicon.ico
 public/site.webmanifest
 public/sitemap.xml
+public/images/*
+!public/images/no-image.png

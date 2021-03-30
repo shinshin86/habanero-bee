@@ -11,7 +11,7 @@ const LinkCard: React.FC<Content> = ({
   tags,
   description,
   text,
-  imagePath,
+  downloadedImagePath: imagePath,
   imageAltText,
   slug,
   externalLinkUrl,
