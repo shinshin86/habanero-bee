@@ -144,8 +144,17 @@ Change `netlify.toml` to the following and `push` it.
 
 **Note that the Canary version may behave in unexpected ways.**
 
-```sh
-# TODO
+```diff
+diff --git a/netlify.toml b/netlify.toml
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -1,5 +1,5 @@
+ [template]
+-  branch = "main"
++  branch = "canary"
+
+ [template.environment]
+   SHEET_URL = "Specify the published URL of the Google Sheets you want to use as data."
 ```
 
 ## For developers
