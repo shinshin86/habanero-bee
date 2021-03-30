@@ -286,7 +286,7 @@ const Layout: React.FC<{
         h6 {
           color: #313f47;
           line-height: 1.5;
-          margin: 0 0 0.75em 0;
+          margin: 0.75em 0;
         }
 
         h1 a,
