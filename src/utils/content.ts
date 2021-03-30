@@ -17,7 +17,10 @@ export const getDescriptionText = (text: string | undefined): string => {
 };
 
 export const renderAmpHTML = async (markdownText: string): Promise<string> => {
-  const renderedHTML = mi.render(markdownText).replace(/\n/g, '');
+  const renderedHTML = mi
+    .render(markdownText)
+    .replace(/\n/g, '')
+    .replace(/<ul>/g, '<ul class=content-list>');
   const regexH1 = /<h1>/;
   const regexH2 = /<h2>/;
 

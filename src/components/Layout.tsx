@@ -286,7 +286,7 @@ const Layout: React.FC<{
         h6 {
           color: #313f47;
           line-height: 1.5;
-          margin: 0 0 0.75em 0;
+          margin: 0.75em 0;
         }
 
         h1 a,
@@ -659,6 +659,16 @@ const Layout: React.FC<{
         .tag-list {
           padding-left: 0;
           margin: 16px;
+        }
+
+        ul.content-list {
+          list-style: revert;
+          text-align: left;
+        }
+
+        ul.content-list > li {
+          margin: 8px 8px 8px 24px;
+          word-wrap: break-word;
         }
 
         /* scrollToTopButton */
