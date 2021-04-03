@@ -32,9 +32,11 @@
   - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
   - [Deploy to Netlify](#deploy-to-netlify)
   - [Advanced: How to manage Habanero Bee in a private repository](#advanced-how-to-manage-habanero-bee-in-a-private-repository)
+  - [Advanced: If you want to try out the latest features (Canary)](#advanced-if-you-want-to-try-out-the-latest-features-canary)
 - [For developers](#for-developers)
   - [Development Usage](#development-usage)
   - [Tips for development](#tips-for-development)
+- [Related Projects](#related-projects)
 - [Habanero Bee uses the power of open source](#habanero-bee-uses-the-power-of-open-source)
   - [Using HTML5 UP](#using-html5-up)
   - [Using Next.js](#using-next.js)
@@ -134,6 +136,14 @@ If you are deploying to Netlify, you will need to log in to your Netlify dashboa
 (Even though it is manual, it is very easy!)
 
 Make sure to set an environment variable called `SHEET_URL` when deploying and set the Google Sheets public URL there.
+
+### Advanced: If you want to try out the latest features (Canary)
+
+Once you have deployed your app, you can change it to the canary version using this method to use the version with the latest features enabled.
+
+**Note that the Canary version may behave in unexpected ways.**
+
+[Habanero Bee shell script of update to latest (Canary version)](https://github.com/shinshin86/habanero-bee-shell-script-of-update-to-latest#canary-version)
 
 ## For developers
 
