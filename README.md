@@ -139,23 +139,11 @@ Make sure to set an environment variable called `SHEET_URL` when deploying and s
 
 ### Advanced: If you want to try out the latest features (Canary)
 
-If you want to try out the latest features of Habanero Bee, you can also use the Canary version.
-Change `netlify.toml` to the following and `push` it.
+Once you have deployed your app, you can change it to the canary version using this method to use the version with the latest features enabled.
 
 **Note that the Canary version may behave in unexpected ways.**
 
-```diff
-diff --git a/netlify.toml b/netlify.toml
---- a/netlify.toml
-+++ b/netlify.toml
-@@ -1,5 +1,5 @@
- [template]
--  branch = "main"
-+  branch = "canary"
-
- [template.environment]
-   SHEET_URL = "Specify the published URL of the Google Sheets you want to use as data."
-```
+[Habanero Bee shell script of update to latest (Canary version)](https://github.com/shinshin86/habanero-bee-shell-script-of-update-to-latest#canary-version)
 
 ## For developers
 
