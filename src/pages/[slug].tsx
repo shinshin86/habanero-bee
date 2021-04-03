@@ -49,6 +49,7 @@ const DetailPage: React.FC<{
     prevPageUrl,
     nextPageUrl,
     relatedContentList,
+    relatedContentTitle,
   } = contentData;
 
   const tagList = getTagList(tags);
@@ -107,7 +108,7 @@ const DetailPage: React.FC<{
           {!!relatedContentList.length && (
             <RelatedContentList
               relatedContentList={relatedContentList}
-              relatedContentTitle={'Related Content'}
+              relatedContentTitle={relatedContentTitle || 'Related Content'}
             />
           )}
           <PrevNextLinks prevPageUrl={prevPageUrl} nextPageUrl={nextPageUrl} />

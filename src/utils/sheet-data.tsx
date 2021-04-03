@@ -39,4 +39,5 @@ export interface Content {
   prevPageUrl?: string;
   nextPageUrl?: string;
   relatedContentList?: Array<Content>;
+  relatedContentTitle?: string;
 }
