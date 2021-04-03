@@ -13,6 +13,7 @@ import { General, Meta, Content } from '@/utils/sheet-data';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import PrevNextLinks from '@/components/PrevNextLinks';
+import RelatedContentList from '@/components/RelatedContentList';
 import { getSlugText } from '@/utils/slug';
 import { getDownloadedImagePath } from '@/utils/image';
 
@@ -47,6 +48,7 @@ const DetailPage: React.FC<{
     dateFormat,
     prevPageUrl,
     nextPageUrl,
+    relatedContentList,
   } = contentData;
 
   const tagList = getTagList(tags);
@@ -102,6 +104,12 @@ const DetailPage: React.FC<{
               `<div>${text}</div>`
             )}
           </header>
+          {!!relatedContentList.length && (
+            <RelatedContentList
+              relatedContentList={relatedContentList}
+              relatedContentTitle={'Related Content'}
+            />
+          )}
           <PrevNextLinks prevPageUrl={prevPageUrl} nextPageUrl={nextPageUrl} />
           <hr />
           {externalLinkUrl && (
@@ -152,6 +160,29 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   contentData.downloadedImagePath =
     contentData.imagePath &&
     (await getDownloadedImagePath(contentData.imagePath));
+
+  // related pages
+  contentData.relatedContentList = getTagList(contentData.tags).reduce(
+    (prev: Array<Content>, tag: string) => {
+      const someTagContents = content.filter(({ slug, tags }: Content) => {
+        const relatedPageSlugList = prev.map((p: Content) => p.slug);
+
+        return (
+          contentData.slug !== slug &&
+          !relatedPageSlugList.includes(slug) &&
+          getTagList(tags).includes(tag)
+        );
+      });
+
+      if (!someTagContents.length) {
+        return prev;
+      }
+
+      prev.push(...someTagContents);
+      return prev;
+    },
+    []
+  );
 
   const slugList = content.map((c: Content) => getSlugText(c.slug));
   const targetPageIndex = slugList.indexOf(params.slug);

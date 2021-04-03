@@ -38,4 +38,5 @@ export interface Content {
   dateFormat?: string;
   prevPageUrl?: string;
   nextPageUrl?: string;
+  relatedContentList?: Array<Content>;
 }
