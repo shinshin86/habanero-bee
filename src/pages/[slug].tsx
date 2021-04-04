@@ -30,6 +30,7 @@ const DetailPage: React.FC<{
     title: pageTitle,
     backgroundColor,
     pageTopButtonColor,
+    enableRelatedContentLink,
     relatedContentTitle,
   } = general;
 
@@ -109,7 +110,7 @@ const DetailPage: React.FC<{
               `<div>${text}</div>`
             )}
           </header>
-          {!!relatedContentList.length && (
+          {!!enableRelatedContentLink && !!relatedContentList.length && (
             <RelatedContentList
               relatedContentList={relatedContentList}
               relatedContentTitle={relatedContentTitle || 'Related Content'}

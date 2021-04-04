@@ -8,6 +8,7 @@ export interface General {
   externalLinkText?: string;
   backgroundColor?: string;
   pageTopButtonColor?: string;
+  enableRelatedContentLink?: boolean;
   relatedContentTitle?: string;
 }
 
