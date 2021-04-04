@@ -1,15 +1,18 @@
-const Footer = (): JSX.Element => (
+const Footer: React.FC<{ link: string; text: string }> = ({
+  link,
+  text,
+}): JSX.Element => (
   <footer id="footer">
     <div>
       <ul className="copyright">
         <li>
           &copy;{' '}
           <a
-            href="https://github.com/shinshin86/habanero-bee"
+            href={link || 'https://github.com/shinshin86/habanero-bee'}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Habanero Bee
+            {text || 'Habanero Bee'}
           </a>
         </li>
       </ul>
