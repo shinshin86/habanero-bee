@@ -26,10 +26,17 @@ declare namespace JSX {
     layout: string;
   }
 
+  interface AmpAccordion {
+    children: JSX.Element | JSX.Element[];
+    'disable-session-states': string;
+    animate: string;
+  }
+
   interface IntrinsicElements {
     'amp-analytics': AmpAnalytics;
     'amp-img': AmpImg;
     'amp-animation': AmpAnimation;
     'amp-position-observer': AmpPositionObserver;
+    'amp-accordion': AmpAccordion;
   }
 }

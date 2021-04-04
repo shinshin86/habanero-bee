@@ -28,8 +28,11 @@ const IndexPage: React.FC<{
     logoImageAltText,
     externalLinkUrl,
     externalLinkText,
+    externalLinkTitle,
     backgroundColor,
     pageTopButtonColor,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -74,16 +77,21 @@ const IndexPage: React.FC<{
             <p>{description}</p>
           </header>
           <ul>
-            {content.map((data, index) => (
-              <LinkCard {...data} key={index} />
-            ))}
+            {content.map((data, index) => {
+              data.externalLinkTitle = externalLinkTitle;
+              return <LinkCard {...data} key={index} />;
+            })}
           </ul>
           <hr />
           {externalLinkUrl && (
-            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
+            <ExternalLinks
+              url={externalLinkUrl}
+              text={externalLinkText}
+              title={externalLinkTitle || 'External link'}
+            />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>

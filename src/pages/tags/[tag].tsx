@@ -30,8 +30,12 @@ const TagPage: React.FC<{
     logoImageAltText,
     externalLinkUrl,
     externalLinkText,
+    externalLinkTitle,
     backgroundColor,
     pageTopButtonColor,
+    tagLinkTitle,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -77,19 +81,26 @@ const TagPage: React.FC<{
             <a href="/">
               <h1>{title}</h1>
             </a>
-            <p>Tag - {tag}</p>
+            <p>
+              {tagLinkTitle || 'Tag'} - {tag}
+            </p>
           </header>
           <ul>
-            {content.map((data, index) => (
-              <LinkCard {...data} key={index} />
-            ))}
+            {content.map((data, index) => {
+              data.externalLinkTitle = externalLinkTitle;
+              return <LinkCard {...data} key={index} />;
+            })}
           </ul>
           <hr />
           {externalLinkUrl && (
-            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
+            <ExternalLinks
+              url={externalLinkUrl}
+              text={externalLinkText}
+              title={externalLinkTitle || 'External link'}
+            />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>

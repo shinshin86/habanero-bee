@@ -59,6 +59,11 @@ const Header: React.FC<Meta> = ({
       custom-element="amp-animation"
       src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"
     ></script>
+    <script
+      async
+      custom-element="amp-accordion"
+      src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+    ></script>
     {googleSiteVerificationCode && (
       <GoogleSiteVerification code={googleSiteVerificationCode} />
     )}

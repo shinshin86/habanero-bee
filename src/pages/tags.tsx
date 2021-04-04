@@ -28,8 +28,11 @@ const IndexPage: React.FC<{
     logoImageAltText,
     externalLinkUrl,
     externalLinkText,
+    externalLinkTitle,
     backgroundColor,
     pageTopButtonColor,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -91,10 +94,14 @@ const IndexPage: React.FC<{
           )}
           <hr />
           {externalLinkUrl && (
-            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
+            <ExternalLinks
+              url={externalLinkUrl}
+              text={externalLinkText}
+              title={externalLinkTitle || 'External link'}
+            />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>

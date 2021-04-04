@@ -6,8 +6,14 @@ export interface General {
   logoImageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;
+  externalLinkTitle?: string;
   backgroundColor?: string;
   pageTopButtonColor?: string;
+  enableRelatedContentLink?: boolean;
+  relatedContentTitle?: string;
+  tagLinkTitle?: string;
+  copyrightText?: string;
+  copyrightLink?: string;
 }
 
 export interface Meta {
@@ -32,10 +38,12 @@ export interface Content {
   imageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;
+  externalLinkTitle?: string;
   tags?: string;
   renderedHTML?: string;
   publishedDate?: Date;
   dateFormat?: string;
   prevPageUrl?: string;
   nextPageUrl?: string;
+  relatedContentList?: Array<Content>;
 }
