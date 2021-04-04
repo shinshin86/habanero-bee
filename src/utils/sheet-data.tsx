@@ -11,6 +11,7 @@ export interface General {
   pageTopButtonColor?: string;
   enableRelatedContentLink?: boolean;
   relatedContentTitle?: string;
+  tagLinkTitle?: string;
 }
 
 export interface Meta {
