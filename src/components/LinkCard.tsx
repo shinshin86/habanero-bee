@@ -16,6 +16,7 @@ const LinkCard: React.FC<Content> = ({
   slug,
   externalLinkUrl,
   externalLinkText,
+  externalLinkTitle,
   publishedDate,
   dateFormat,
 }): JSX.Element => {
@@ -46,7 +47,11 @@ const LinkCard: React.FC<Content> = ({
         <p className="description-text">{descriptionText}</p>
       </a>
       {externalLinkUrl && (
-        <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
+        <ExternalLinks
+          url={externalLinkUrl}
+          text={externalLinkText}
+          title={externalLinkTitle || 'External link'}
+        />
       )}
     </li>
   );

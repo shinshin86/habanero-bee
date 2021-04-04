@@ -32,6 +32,7 @@ const DetailPage: React.FC<{
     pageTopButtonColor,
     enableRelatedContentLink,
     relatedContentTitle,
+    externalLinkTitle,
   } = general;
 
   const {
@@ -119,7 +120,11 @@ const DetailPage: React.FC<{
           <PrevNextLinks prevPageUrl={prevPageUrl} nextPageUrl={nextPageUrl} />
           <hr />
           {externalLinkUrl && (
-            <ExternalLinks url={externalLinkUrl} text={externalLinkText} />
+            <ExternalLinks
+              url={externalLinkUrl}
+              text={externalLinkText}
+              title={externalLinkTitle || 'External link'}
+            />
           )}
         </section>
         <Footer />
