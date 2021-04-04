@@ -6,6 +6,7 @@ export interface General {
   logoImageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;
+  externalLinkTitle?: string;
   backgroundColor?: string;
   pageTopButtonColor?: string;
   enableRelatedContentLink?: boolean;
@@ -34,6 +35,7 @@ export interface Content {
   imageAltText?: string;
   externalLinkUrl?: string;
   externalLinkText?: string;
+  externalLinkTitle?: string;
   tags?: string;
   renderedHTML?: string;
   publishedDate?: Date;
