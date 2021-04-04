@@ -12,6 +12,8 @@ export interface General {
   enableRelatedContentLink?: boolean;
   relatedContentTitle?: string;
   tagLinkTitle?: string;
+  copyrightText?: string;
+  copyrightLink?: string;
 }
 
 export interface Meta {

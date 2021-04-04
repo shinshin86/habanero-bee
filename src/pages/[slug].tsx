@@ -33,6 +33,8 @@ const DetailPage: React.FC<{
     enableRelatedContentLink,
     relatedContentTitle,
     externalLinkTitle,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -127,7 +129,7 @@ const DetailPage: React.FC<{
             />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>

@@ -31,6 +31,8 @@ const IndexPage: React.FC<{
     externalLinkTitle,
     backgroundColor,
     pageTopButtonColor,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -99,7 +101,7 @@ const IndexPage: React.FC<{
             />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>

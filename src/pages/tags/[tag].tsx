@@ -34,6 +34,8 @@ const TagPage: React.FC<{
     backgroundColor,
     pageTopButtonColor,
     tagLinkTitle,
+    copyrightText,
+    copyrightLink,
   } = general;
 
   const {
@@ -98,7 +100,7 @@ const TagPage: React.FC<{
             />
           )}
         </section>
-        <Footer />
+        <Footer link={copyrightLink} text={copyrightText} />
       </div>
       <PageTopButton />
     </Layout>
