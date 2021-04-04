@@ -8,6 +8,7 @@ export interface General {
   externalLinkText?: string;
   backgroundColor?: string;
   pageTopButtonColor?: string;
+  relatedContentTitle?: string;
 }
 
 export interface Meta {
@@ -39,5 +40,4 @@ export interface Content {
   prevPageUrl?: string;
   nextPageUrl?: string;
   relatedContentList?: Array<Content>;
-  relatedContentTitle?: string;
 }

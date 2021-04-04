@@ -26,7 +26,12 @@ const DetailPage: React.FC<{
   contentData: Content;
   meta: Meta;
 }> = ({ general, contentData, meta }): JSX.Element => {
-  const { title: pageTitle, backgroundColor, pageTopButtonColor } = general;
+  const {
+    title: pageTitle,
+    backgroundColor,
+    pageTopButtonColor,
+    relatedContentTitle,
+  } = general;
 
   const {
     googleAnalyticsTrackingId,
@@ -49,7 +54,6 @@ const DetailPage: React.FC<{
     prevPageUrl,
     nextPageUrl,
     relatedContentList,
-    relatedContentTitle,
   } = contentData;
 
   const tagList = getTagList(tags);
