@@ -33,6 +33,7 @@ const TagPage: React.FC<{
     externalLinkTitle,
     backgroundColor,
     pageTopButtonColor,
+    tagLinkTitle,
   } = general;
 
   const {
@@ -78,7 +79,9 @@ const TagPage: React.FC<{
             <a href="/">
               <h1>{title}</h1>
             </a>
-            <p>Tag - {tag}</p>
+            <p>
+              {tagLinkTitle || 'Tag'} - {tag}
+            </p>
           </header>
           <ul>
             {content.map((data, index) => {
