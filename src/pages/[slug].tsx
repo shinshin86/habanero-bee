@@ -14,7 +14,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import ExternalLinks from '@/components/ExternalLinks';
 import PrevNextLinks from '@/components/PrevNextLinks';
 import RelatedContentList from '@/components/RelatedContentList';
-import { getSlugText } from '@/utils/slug';
+import { getSlugText, getUrlText } from '@/utils/slug';
 import { getDownloadedImagePath } from '@/utils/image';
 
 export const config = {
@@ -144,7 +144,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { SHEET_URL } = process.env;
 
   const response = await fetch(SHEET_URL).then((r) => r.json());
-  const paths = response.content.map((c: Content) => `/${getSlugText(c.slug)}`);
+  const paths = response.content.map((c: Content) =>
+    getUrlText(getSlugText(c.slug))
+  );
 
   return { paths, fallback: false };
 };
@@ -200,10 +202,10 @@ export const getStaticProps: GetStaticProps = async ({ params }: Params) => {
   const slugList = content.map((c: Content) => getSlugText(c.slug));
   const targetPageIndex = slugList.indexOf(params.slug);
   contentData.prevPageUrl =
-    targetPageIndex && `/${slugList[targetPageIndex - 1]}`;
+    targetPageIndex && getUrlText(slugList[targetPageIndex - 1]);
   contentData.nextPageUrl =
     slugList.length > targetPageIndex + 1 &&
-    `/${slugList[targetPageIndex + 1]}`;
+    getUrlText(slugList[targetPageIndex + 1]);
 
   if (!isValidData(general, meta, new Array(contentData))) {
     throw new Error('BUILD ERROR: Invalid sheet data');
