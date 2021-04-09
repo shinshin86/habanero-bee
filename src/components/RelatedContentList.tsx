@@ -1,4 +1,5 @@
 import { Content } from '@/utils/sheet-data';
+import { getUrlText } from '@/utils/slug';
 
 const RelatedContentList: React.FC<{
   relatedContentList: Array<Content>;
@@ -22,7 +23,7 @@ const RelatedContentList: React.FC<{
         <div>
           {relatedContentList.map((content) => (
             <p key={content.slug}>
-              <a href={`/${content.slug}`}>{content.title}</a>
+              <a href={getUrlText(content.slug)}>{content.title}</a>
             </p>
           ))}
         </div>
