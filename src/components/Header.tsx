@@ -30,8 +30,8 @@ const Header: React.FC<Meta> = ({
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:image" content={ogpImage} />
-    {/* twitteri */}
-    <meta property="twitter:card" content="summary_large_image" />
+    {/* twitter */}
+    <meta property="twitter:card" content="summary" />
     <meta property="twitter:url" content={siteUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
