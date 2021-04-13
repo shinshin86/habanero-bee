@@ -71,7 +71,7 @@ const DetailPage: React.FC<{
         siteUrl={`${meta.siteUrl}/${contentData.slug}`}
         title={`${title} | ${meta.title}`}
         description={description || getMetaDescriptionText(text)}
-        ogpImage={downloadedImagePath || meta.ogpImage}
+        ogpImage={`${meta.siteUrl}${downloadedImagePath}` || meta.ogpImage}
         avatarImage={downloadedImagePath || '/images/no-image.png'}
         googleSiteVerificationCode={googleSiteVerificationCode}
         noindex={noindex}
