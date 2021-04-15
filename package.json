@@ -1,6 +1,6 @@
 {
   "name": "habanero-bee",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Habanero Bee is a simple AMP-compliant CMS system that makes it easy to create content using Google Sheets.",
   "scripts": {
     "dev": "next",

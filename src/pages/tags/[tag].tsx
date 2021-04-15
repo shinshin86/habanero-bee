@@ -52,9 +52,9 @@ const TagPage: React.FC<{
       pageTopButtonColorCode={pageTopButtonColor}
     >
       <Header
-        siteUrl={meta.siteUrl}
-        title={meta.title}
-        description={meta.description}
+        siteUrl={`${meta.siteUrl}/tags/${tag}`}
+        title={`${tagLinkTitle || 'Tag'} - ${tag} | ${meta.title}`}
+        description={`${tagLinkTitle || 'Tag'} - ${tag} | ${meta.description}`}
         ogpImage={meta.ogpImage}
         avatarImage={avatarImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
