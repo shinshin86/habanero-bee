@@ -72,7 +72,12 @@ const IndexPage: React.FC<{
         {/* Main */}
         <section id="main">
           <header>
-            <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
+            <AvatarImage
+              imageUrl={avatarImage}
+              altText={logoImageAltText}
+              width="250"
+              height="250"
+            />
             <h1>{title}</h1>
             <p>{description}</p>
           </header>

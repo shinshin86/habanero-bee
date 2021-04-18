@@ -76,7 +76,12 @@ const TagPage: React.FC<{
         <section id="main">
           <header>
             <a href="/">
-              <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
+              <AvatarImage
+                imageUrl={avatarImage}
+                altText={logoImageAltText}
+                width="250"
+                height="250"
+              />
             </a>
             <a href="/">
               <h1>{title}</h1>
