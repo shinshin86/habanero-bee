@@ -102,6 +102,8 @@ const DetailPage: React.FC<{
             <AvatarImage
               imageUrl={downloadedImagePath || '/images/no-image.png'}
               altText={imageAltText}
+              width="250"
+              height="250"
             />
             <h2>{title}</h2>
             {publishedDate && (
