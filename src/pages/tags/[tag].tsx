@@ -38,11 +38,8 @@ const TagPage: React.FC<{
     copyrightLink,
   } = general;
 
-  const {
-    googleAnalyticsTrackingId,
-    googleSiteVerificationCode,
-    noindex,
-  } = meta;
+  const { googleAnalyticsTrackingId, googleSiteVerificationCode, noindex } =
+    meta;
 
   const avatarImage = downloadedImagePath || logoImage;
 
@@ -76,7 +73,12 @@ const TagPage: React.FC<{
         <section id="main">
           <header>
             <a href="/">
-              <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
+              <AvatarImage
+                imageUrl={avatarImage}
+                altText={logoImageAltText}
+                width="250"
+                height="250"
+              />
             </a>
             <a href="/">
               <h1>{title}</h1>

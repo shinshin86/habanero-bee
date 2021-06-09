@@ -47,7 +47,9 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      'BUILD ERROR: title and description is required(general sheet)'
+    );
   });
 
   test('Should return false, If data is invalid. (Case of meta data is invalid)', (): void => {
@@ -71,7 +73,9 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      'BUILD ERROR: siteUrl and title and description and ogpImage is required(meta sheet)'
+    );
   });
 
   test('Should return false, If data is invalid. (Case of content data is invalid)', (): void => {
@@ -95,7 +99,9 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      'BUILD ERROR: title and text and slug is required(content sheet)'
+    );
   });
 
   test('Should return false, If data is invalid. (Case of content slug is duplicated)', (): void => {
@@ -119,7 +125,9 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      'BUILD ERROR: slug is duplicated'
+    );
   });
 
   test('Should return false, If data is invalid. (Case of content slug include slash)', (): void => {
@@ -143,7 +151,9 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      "BUILD ERROR: Can't use /(slash) in slug(content sheet)"
+    );
   });
 
   test('Should return true, If all data is valid. (Include tags)', (): void => {
@@ -195,6 +205,8 @@ describe('isValidData', (): void => {
       },
     ];
 
-    expect(isValidData(general, meta, contentList)).toBeFalsy();
+    expect(() => isValidData(general, meta, contentList)).toThrow(
+      "BUILD ERROR: Can't use /(slash) in tags(content sheet)"
+    );
   });
 });

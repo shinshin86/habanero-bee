@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import TagLinks from '@/components/TagLinks';
+import AvatarImage from '@/components/AvatarImage';
 import { getTagList } from '@/utils/tags';
 import { getDescriptionText, getTextContent } from '@/utils/content';
 import { Content } from '@/utils/sheet-data';
@@ -35,15 +36,12 @@ const LinkCard: React.FC<Content> = ({
       </a>
       {!!tagList.length && <TagLinks tags={tagList} />}
       <a href={linkUrl}>
-        <span>
-          <amp-img
-            style={{ borderRadius: '100%' }}
-            src={imagePath || '/images/no-image.png'}
-            alt={imageAltText || 'No Image'}
-            width="200"
-            height="200"
-          />
-        </span>
+        <AvatarImage
+          imageUrl={imagePath}
+          altText={imageAltText}
+          width="200"
+          height="200"
+        />
         <p className="description-text">{descriptionText}</p>
       </a>
       {externalLinkUrl && (

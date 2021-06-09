@@ -37,11 +37,8 @@ const DetailPage: React.FC<{
     copyrightLink,
   } = general;
 
-  const {
-    googleAnalyticsTrackingId,
-    googleSiteVerificationCode,
-    noindex,
-  } = meta;
+  const { googleAnalyticsTrackingId, googleSiteVerificationCode, noindex } =
+    meta;
 
   const {
     title,
@@ -102,6 +99,8 @@ const DetailPage: React.FC<{
             <AvatarImage
               imageUrl={downloadedImagePath || '/images/no-image.png'}
               altText={imageAltText}
+              width="250"
+              height="250"
             />
             <h2>{title}</h2>
             {publishedDate && (

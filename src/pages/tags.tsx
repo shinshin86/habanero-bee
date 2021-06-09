@@ -35,11 +35,8 @@ const IndexPage: React.FC<{
     copyrightLink,
   } = general;
 
-  const {
-    googleAnalyticsTrackingId,
-    googleSiteVerificationCode,
-    noindex,
-  } = meta;
+  const { googleAnalyticsTrackingId, googleSiteVerificationCode, noindex } =
+    meta;
 
   const avatarImage = downloadedImagePath || logoImage;
 
@@ -72,7 +69,12 @@ const IndexPage: React.FC<{
         {/* Main */}
         <section id="main">
           <header>
-            <AvatarImage imageUrl={avatarImage} altText={logoImageAltText} />
+            <AvatarImage
+              imageUrl={avatarImage}
+              altText={logoImageAltText}
+              width="250"
+              height="250"
+            />
             <h1>{title}</h1>
             <p>Tags</p>
           </header>
