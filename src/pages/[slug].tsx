@@ -37,11 +37,8 @@ const DetailPage: React.FC<{
     copyrightLink,
   } = general;
 
-  const {
-    googleAnalyticsTrackingId,
-    googleSiteVerificationCode,
-    noindex,
-  } = meta;
+  const { googleAnalyticsTrackingId, googleSiteVerificationCode, noindex } =
+    meta;
 
   const {
     title,
