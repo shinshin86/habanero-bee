@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import AmpAutoAds from '@/components/AmpAutoAds';
 import Analytics from '@/components/Analytics';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -38,8 +39,12 @@ const TagPage: React.FC<{
     copyrightLink,
   } = general;
 
-  const { googleAnalyticsTrackingId, googleSiteVerificationCode, noindex } =
-    meta;
+  const {
+    googleAnalyticsTrackingId,
+    googleSiteVerificationCode,
+    googleAdsenseCode,
+    noindex,
+  } = meta;
 
   const avatarImage = downloadedImagePath || logoImage;
 
@@ -55,8 +60,10 @@ const TagPage: React.FC<{
         ogpImage={meta.ogpImage}
         avatarImage={avatarImage}
         googleSiteVerificationCode={googleSiteVerificationCode}
+        googleAdsenseCode={googleAdsenseCode}
         noindex={noindex}
       />
+      {googleAdsenseCode && <AmpAutoAds code={googleAdsenseCode} />}
       {googleAnalyticsTrackingId && (
         <Analytics trackingId={googleAnalyticsTrackingId} />
       )}

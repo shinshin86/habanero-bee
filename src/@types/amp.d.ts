@@ -32,11 +32,17 @@ declare namespace JSX {
     animate: string;
   }
 
+  interface AmpAutoAds {
+    type: string;
+    'data-ad-client': string;
+  }
+
   interface IntrinsicElements {
     'amp-analytics': AmpAnalytics;
     'amp-img': AmpImg;
     'amp-animation': AmpAnimation;
     'amp-position-observer': AmpPositionObserver;
     'amp-accordion': AmpAccordion;
+    'amp-auto-ads': AmpAutoAds;
   }
 }
