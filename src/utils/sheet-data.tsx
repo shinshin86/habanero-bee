@@ -25,6 +25,7 @@ export interface Meta {
   keywords?: string;
   googleAnalyticsTrackingId?: string;
   googleSiteVerificationCode?: string;
+  googleAdsenseCode?: string;
   noindex?: boolean;
 }
 

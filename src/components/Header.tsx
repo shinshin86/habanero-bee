@@ -10,6 +10,7 @@ const Header: React.FC<Meta> = ({
   avatarImage,
   description,
   googleSiteVerificationCode,
+  googleAdsenseCode,
   noindex,
 }): JSX.Element => (
   <Head>
@@ -66,6 +67,13 @@ const Header: React.FC<Meta> = ({
     ></script>
     {googleSiteVerificationCode && (
       <GoogleSiteVerification code={googleSiteVerificationCode} />
+    )}
+    {googleAdsenseCode && (
+      <script
+        async
+        custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
+      ></script>
     )}
   </Head>
 );
