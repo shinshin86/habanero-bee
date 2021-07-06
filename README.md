@@ -28,6 +28,7 @@
 
 - [Abstract](#abstract)
 - [Features](#features)
+- [Demo](#demo)
 - [Setup Habanero Bee Site](#setup-habanero-bee-site)
   - [Make a content on Google Sheets](#make-a-content-on-google-sheets)
   - [Deploy to Netlify](#deploy-to-netlify)
@@ -63,6 +64,10 @@ Habanero Bee has three "Easy and Fast" features.
 - Easy and Fast to publish a site.
   - Habanero Bee is designed to be deployed using Netlify.
     If you already have content on your Google Sheets in place for your site, [this section in button](#deploy-to-netlify) will get your site deployed in no time.
+
+## Demo
+
+[Here](https://habanero-bee-demo.netlify.app) is a demo site created using Habanero Bee.
 
 ## Setup Habanero Bee Site
 
