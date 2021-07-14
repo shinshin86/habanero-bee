@@ -3,7 +3,7 @@ import TagLinks from '@/components/TagLinks';
 import AvatarImage from '@/components/AvatarImage';
 import { getTagList } from '@/utils/tags';
 import { getDescriptionText, getTextContent } from '@/utils/content';
-import { Content } from '@/utils/sheet-data';
+import { Content } from '@/interfaces/sheet-data';
 import ExternalLinks from '@/components/ExternalLinks';
 import { getSlugText, getUrlText } from '@/utils/slug';
 

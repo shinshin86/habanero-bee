@@ -1,4 +1,4 @@
-import { Content } from '@/utils/sheet-data';
+import { Content } from '@/interfaces/sheet-data';
 import { getUrlText } from '@/utils/slug';
 
 const RelatedContentList: React.FC<{

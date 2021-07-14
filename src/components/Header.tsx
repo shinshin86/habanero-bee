@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import GoogleSiteVerification from '@/components/GoogleSiteVerification';
-import { Meta } from '@/utils/sheet-data';
+import { Meta } from '@/interfaces/sheet-data';
 
 const Header: React.FC<Meta> = ({
   siteUrl,

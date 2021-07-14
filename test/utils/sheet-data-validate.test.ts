@@ -1,5 +1,5 @@
-import { isValidData } from '@/utils/validate';
-import { General, Meta, Content } from '@/utils/sheet-data';
+import { isValidData } from '@/utils/sheet-data-validate';
+import { General, Meta, Content } from '@/interfaces/sheet-data';
 
 describe('isValidData', (): void => {
   test('Should return true, If all data is valid.', (): void => {
