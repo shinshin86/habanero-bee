@@ -1,4 +1,5 @@
 import { General, Meta, Content } from '@/interfaces/sheet-data';
+import { isValidUrl } from './validate';
 
 const isValidGeneralData = (obj: General): boolean => {
   const { title, description } = obj;
@@ -18,6 +19,10 @@ const isValidMetaData = (obj: Meta): boolean => {
     throw new Error(
       'BUILD ERROR: siteUrl and title and description and ogpImage is required(meta sheet)'
     );
+  }
+
+  if (!isValidUrl(siteUrl)) {
+    throw new Error('BUILD ERROR: siteUrl is invalid URL (meta sheet)');
   }
 
   return true;
