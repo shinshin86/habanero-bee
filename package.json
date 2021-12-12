@@ -51,7 +51,7 @@
     "react-dom": "^17.0.2",
     "sharp": "^0.29.3",
     "simple-favicon-generator": "^0.0.1",
-    "string-replace-async": "^3.0.2",
+    "string-replace-async": "^2.0.0",
     "very-simple-sitemap-generator": "^0.1.0"
   },
   "devDependencies": {

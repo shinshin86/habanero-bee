@@ -1,9 +1,9 @@
 import markdownIt from 'markdown-it';
 import { getDownloadedHTMLImagePath, isExternalImage } from '@/utils/image';
-import replaceAsync from 'string-replace-async';
 const mi = markdownIt({ breaks: true, html: true });
 /* eslint-disable @typescript-eslint/no-var-requires */
 const img2AmpImg = require('img2amp-img');
+const replaceAsync = require('string-replace-async');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 export const getDescriptionText = (text: string | undefined): string => {
