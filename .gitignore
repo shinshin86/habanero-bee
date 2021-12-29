@@ -11,3 +11,4 @@ public/site.webmanifest
 public/sitemap.xml
 public/images/*
 !public/images/no-image.png
+*.tsbuildinfo
