@@ -1,6 +1,6 @@
 {
   "name": "habanero-bee",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Habanero Bee is a simple AMP-compliant CMS system that makes it easy to create content using Google Sheets.",
   "scripts": {
     "dev": "next",
@@ -39,40 +39,40 @@
   },
   "homepage": "https://github.com/shinshin86/habanero-bee#readme",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14.17.0"
   },
   "dependencies": {
-    "dayjs": "^1.10.5",
+    "dayjs": "^1.10.7",
     "img2amp-img": "^0.1.0",
-    "markdown-it": "^12.0.6",
-    "next": "^10.2.3",
-    "node-fetch": "^2.6.1",
+    "markdown-it": "^12.3.2",
+    "next": "^12.0.9",
+    "node-fetch": "2.6.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sharp": "^0.28.3",
+    "sharp": "^0.29.3",
     "simple-favicon-generator": "^0.0.1",
     "string-replace-async": "^2.0.0",
     "very-simple-sitemap-generator": "^0.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "@types/markdown-it": "^12.0.2",
-    "@types/node": "^15.12.2",
-    "@types/react": "^17.0.9",
-    "@types/react-dom": "^17.0.6",
-    "@typescript-eslint/eslint-plugin": "^4.26.1",
-    "@typescript-eslint/parser": "^4.26.1",
-    "eslint": "^7.28.0",
+    "@types/jest": "^27.0.3",
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^6.0.0",
-    "jest": "^27.0.4",
-    "lint-staged": "^11.0.0",
-    "prettier": "^2.3.1",
-    "ts-jest": "^27.0.3",
-    "typescript": "^4.3.2"
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
   }
 }
