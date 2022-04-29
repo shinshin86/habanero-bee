@@ -1,4 +1,3 @@
-/* @ts-ignore  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const Layout: React.FC<{
   children: any;

@@ -1,4 +1,3 @@
-/* @ts-ignore  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const OtherLinks: React.FC<{ links: any }> = ({ links }): JSX.Element => (
   <ul className="external-link-container">

@@ -7,7 +7,6 @@ const RelatedContentList: React.FC<{
 }> = ({ relatedContentList, relatedContentTitle }): JSX.Element => (
   <div>
     <amp-accordion disable-session-states="" animate="">
-      {/* @ts-ignore */}
       <section expanded="">
         {/* It didn't reflect, so I wrote it directly style. */}
         <h2

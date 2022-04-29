@@ -39,8 +39,6 @@ module.exports = {
         'jsx-a11y/anchor-has-content': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        // Once all @ts-ignore is removed, we will remove this setting as well.
-        '@typescript-eslint/ban-ts-comment': 'off',
       },
     },
   ],
