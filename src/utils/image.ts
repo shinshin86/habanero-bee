@@ -35,7 +35,9 @@ export const isExternalImage = (imgTag: string): boolean => {
 };
 
 const downloadImage = async (url: string): Promise<string> => {
+  /* eslint-disable @typescript-eslint/no-var-requires */
   const fetch = require('node-fetch');
+  /* eslint-enable @typescript-eslint/no-var-requires */
   const response = await fetch(url);
 
   const buffer = await response.buffer();
