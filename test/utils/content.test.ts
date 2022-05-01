@@ -73,9 +73,7 @@ ${'`youtube:error-url`'}
 ${'`youtube:https://youtu.be/lBTCB7yLs8Y`'}
 `;
 
-    await expect(renderAmpHTML(mdText)).rejects.toThrow(
-      'Invalid URL: error-url'
-    );
+    await expect(renderAmpHTML(mdText)).rejects.toThrow('Invalid URL');
   });
 
   test('Should throw error, if invalid URL. (Pattern of Not YouTube URL)', async (): Promise<void> => {

@@ -51,7 +51,6 @@ const PageTopButton = (): JSX.Element => {
       </amp-animation>
       <button
         id="scrollToTopButton"
-        // @ts-ignore
         on="tap:top.scrollTo(duration=200)"
         className="scrollToTop"
       >
