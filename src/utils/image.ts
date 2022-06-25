@@ -9,10 +9,7 @@ const imgTagRegex = /src=["|'](.*?)["|']/;
 export const getDownloadedHTMLImagePath = async (
   imgTag: string
 ): Promise<string> => {
-  const url = imgTag.match(imgTagRegex)
-    ? // @ts-ignore
-      imgTag.match(imgTagRegex)[1]
-    : '';
+  const url = imgTag.match(imgTagRegex) ? imgTag.match(imgTagRegex)[1] : '';
 
   if (!url) {
     throw new Error('Error: URL of image is not set in img tag');
@@ -28,10 +25,7 @@ export const getDownloadedImagePath = async (url: string): Promise<string> => {
 };
 
 export const isExternalImage = (imgTag: string): boolean => {
-  const url = imgTag.match(imgTagRegex)
-    ? // @ts-ignore
-      imgTag.match(imgTagRegex)[1]
-    : '';
+  const url = imgTag.match(imgTagRegex) ? imgTag.match(imgTagRegex)[1] : '';
 
   if (!url) {
     throw new Error('Error: URL of image is not set in img tag');
@@ -41,9 +35,11 @@ export const isExternalImage = (imgTag: string): boolean => {
 };
 
 const downloadImage = async (url: string): Promise<string> => {
+  /* eslint-disable @typescript-eslint/no-var-requires */
+  const fetch = require('node-fetch');
+  /* eslint-enable @typescript-eslint/no-var-requires */
   const response = await fetch(url);
 
-  // @ts-ignore
   const buffer = await response.buffer();
   const hashedImageName = getHashImageName(url);
   const imagePath = `/images/${hashedImageName}`;

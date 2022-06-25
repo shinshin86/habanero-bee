@@ -26,6 +26,12 @@ declare namespace JSX {
     layout: string;
   }
 
+  interface AmpSection {
+    id?: string;
+    children: Element[];
+    expanded?: string;
+  }
+
   interface AmpAccordion {
     children: JSX.Element | JSX.Element[];
     'disable-session-states': string;
@@ -37,6 +43,13 @@ declare namespace JSX {
     'data-ad-client': string;
   }
 
+  interface AmpScrollToTopButton {
+    id: string;
+    className: string;
+    children: string;
+    on: string;
+  }
+
   interface IntrinsicElements {
     'amp-analytics': AmpAnalytics;
     'amp-img': AmpImg;
@@ -44,5 +57,7 @@ declare namespace JSX {
     'amp-position-observer': AmpPositionObserver;
     'amp-accordion': AmpAccordion;
     'amp-auto-ads': AmpAutoAds;
+    button: AmpScrollToTopButton;
+    section?: AmpSection;
   }
 }

@@ -1,26 +1,30 @@
+type TrackingId = string;
+
 interface AnalyticsSetData {
   vars: {
     gtag_id: string;
-    config: {
+    config?: {
       // A dynamic key will be inserted here
-      trackingIdKey: {
+      trackingIdKey?: {
+        groups: string;
+      };
+      [key: TrackingId]: {
         groups: string;
       };
     };
   };
 }
+
 const Analytics: React.FC<{ trackingId: string }> = ({
   trackingId,
 }): JSX.Element => {
   const data: AnalyticsSetData = {
     vars: {
       gtag_id: trackingId,
-      // @ts-ignore
       config: {},
     },
   };
 
-  // @ts-ignore
   data.vars.config[trackingId] = { groups: 'default' };
 
   const json: string = JSON.stringify(data);
